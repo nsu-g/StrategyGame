@@ -1,23 +1,25 @@
 #pragma once
 #include "GameObject.h"
+#include "WorldController.h"
 
 class Student : public GameObject {
-	unsigned int x, y;
-	sf::CircleShape shape;
+	sf::Vector2u pos;
 public:
-	virtual void render(sf::RenderTarget& r)
+	virtual void render(sf::RenderTarget& r) override
 	{
-		shape.setRadius(20);
+		sf::CircleShape shape;
+		shape.setRadius(17);
 		shape.setFillColor(sf::Color::Red);
-		shape.setPosition(x, y);
+		WorldController wc(30, 30, 20);
+		shape.setPosition(wc.mapToScreen(pos) - sf::Vector2f(17, 17));
 		r.draw(shape);
 	}
-	virtual void update() 
+	virtual void update() override
 	{
-		x++; y++;
+
 	}
-	virtual sf::Vector2u position()
+	virtual sf::Vector2u& position() override
 	{
-		return{ x,y };
+		return pos;
 	}
 };

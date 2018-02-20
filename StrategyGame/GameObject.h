@@ -8,5 +8,5 @@ class GameObject
 public:
 	virtual void render(sf::RenderTarget&) = 0;
 	virtual void update() = 0;
-	virtual sf::Vector2u position() = 0;
+	virtual sf::Vector2u& position() = 0;
 };

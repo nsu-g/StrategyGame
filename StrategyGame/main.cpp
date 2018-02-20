@@ -5,7 +5,7 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
-
+	window.setVerticalSyncEnabled(true);
 	//sf::View gameView;
 
 	//gameView.s

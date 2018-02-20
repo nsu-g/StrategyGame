@@ -12,14 +12,14 @@ class WorldModel {
 
 	// Constructor is private so it can't be called from other code - Singletone pattern
 	WorldModel();
-
+	WorldModel(const WorldModel&) = delete;
+	void operator=(const WorldModel&) = delete;
+	
+public:
+	//TODO: move to private, add getters
 	std::vector<std::shared_ptr<GameObject>> landscape;
 	std::vector<std::shared_ptr<GameObject>> actors;
 	std::vector<std::shared_ptr<Order>> orders;
-
-	// static method HAS NO OBJECT, calls to class
-	static WorldModel* getWorldInstance();
-
 	void LoadLevel(std::string filename)
 	{
 		//TODO load model from file. (For different game levels or save/load feature)
@@ -29,6 +29,9 @@ class WorldModel {
 	{
 		//TODO save model to file
 	}
-	friend class WorldRenderer;
+
+	// static method HAS NO OBJECT, calls to class
+	static WorldModel* getWorldInstance();
+
 };
 

@@ -34,6 +34,10 @@ class WorldRenderer
 	{
 		for (int i = 0; i < 10; i++)
 		{
+			if (i == 0)
+				radius = 5;
+			else
+				radius = 20;
 			float x = radius*(cos(30 * pi / 180.f)-cos(150 * pi / 180.f));
 			renderHex(30+i*x,30);
 		}
@@ -54,8 +58,6 @@ public:
 	{
 
 	}
-
-
 
 	void render()
 	{
