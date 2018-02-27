@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
+#include "WorldController.h"
 
 #include "WorldRenderer.h"
-
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
@@ -11,7 +11,7 @@ int main()
 	//gameView.s
 	
 	WorldRenderer wr(window);
-
+	WorldController wc(30,30,20);
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -21,8 +21,10 @@ int main()
 				window.close();
 		}
 		window.clear();
-
+		
+		wc.update();
 		wr.render();
+		
 		sf::sleep(sf::milliseconds(20));
 		
 		window.display();

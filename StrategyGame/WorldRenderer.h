@@ -65,7 +65,6 @@ public:
 		for (auto& i : WorldModel::getWorldInstance()->actors)
 		{
 			i->render(renderer);
-			i->update();
 		}
 	}
 };

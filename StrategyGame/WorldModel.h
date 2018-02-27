@@ -5,6 +5,7 @@
 
 #include "GameObject.h"
 #include "Order.h"
+#include "MoveOrder.h"
 #include "Student.h"
 
 class WorldModel {

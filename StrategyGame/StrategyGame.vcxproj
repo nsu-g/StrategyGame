@@ -126,10 +126,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="WorldController.cpp" />
     <ClCompile Include="WorldModel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameObject.h" />
+    <ClInclude Include="MoveOrder.h" />
     <ClInclude Include="Order.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="WorldController.h" />

@@ -4,7 +4,9 @@ WorldModel* WorldModel::WORLD = nullptr;
 
 WorldModel::WorldModel()
 {
-	actors.push_back(std::make_shared<Student>());
+	auto ps = std::make_shared<Student>();
+	actors.push_back(ps);
+	orders.push_back(std::make_shared<MoveOrder>(ps, sf::Vector2u(2,2)));
 }
 
 
