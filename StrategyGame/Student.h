@@ -3,6 +3,7 @@
 #include "GameObject.h"
 #include "WorldController.h"
 #include <SFML\Graphics.hpp>
+#include "MoveOrder.h"
 
 class Student : public GameObject {
 	sf::Vector2u pos;
@@ -18,4 +19,7 @@ public:
 	{
 		return pos;
 	}
+
+	virtual std::vector<sf::Vector2i>  Student::ABMovement(sf::Vector2u endPosition);
+
 };

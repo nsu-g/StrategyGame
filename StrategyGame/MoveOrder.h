@@ -18,7 +18,7 @@ public:
 	{
 		return subj;
 	}
-	
+
 	virtual bool finished()
 	{
 		return endPosition == (*subj).position();
