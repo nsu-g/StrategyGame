@@ -65,6 +65,16 @@ class WorldRenderer
 
 		renderer.draw(hexagon);
 	}
+	void renderPinkHex(float ox, float oy)
+	{
+		sf::CircleShape hexagon(radius, 6);
+		hexagon.setPosition(ox, oy);
+		hexagon.setOutlineThickness(1);
+		hexagon.setFillColor(sf::Color::Transparent);
+		hexagon.setOutlineColor(sf::Color::Blue);
+
+		renderer.draw(hexagon);
+	}
 
 	void renderGrid()
 	{
@@ -78,7 +88,18 @@ class WorldRenderer
 				renderHex(30 - (i % 2) * x_offset + j * 2 * radius * cos(30 * pi / 180.f), 30 + i * y_offset);
 			}
 		}
-		renderGreenHex(30 - ((int)chosenHex.first % 2) * x_offset + chosenHex.second * 2 * radius * cos(30 * pi / 180.f), 30 + chosenHex.first * y_offset);
+		if (chosenHex.first >= 0 && chosenHex.second >= 0)
+		{
+			renderGreenHex(30 - ((int)chosenHex.first % 2) * x_offset + chosenHex.second * 2 * radius * cos(30 * pi / 180.f), 30 + chosenHex.first * y_offset);
+		}
+
+		for (auto& i : WorldModel::getWorldInstance()->actors)
+		{
+			if (chosenHex.first == i->position().x && chosenHex.second == i->position().y)
+			{
+				renderPinkHex(30 - ((int)i->position().x % 2) * x_offset + (int)i->position().y * 2 * radius * cos(30 * pi / 180.f), 30 + (int)i->position().x * y_offset);
+			}
+		}
 
 	}
 
@@ -92,7 +113,7 @@ public:
 		renderGrid();
 		for (auto& i : WorldModel::getWorldInstance()->actors)
 		{
-			//i->render(renderer);
+			i->render(renderer);
 		}
 	}
 
