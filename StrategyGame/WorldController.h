@@ -5,6 +5,8 @@
 #include "WorldModel.h"
 //TODO : Singleton
 class Student;
+class Civilian;
+class Actors;
 class WorldController
 {
 	const float pi = 3.14159265358979323846;

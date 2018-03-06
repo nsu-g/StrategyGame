@@ -27,6 +27,12 @@
     <ClCompile Include="WorldController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Civilian.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WorldModel.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MoveOrder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Civilian.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Actors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
