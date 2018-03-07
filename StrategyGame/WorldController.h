@@ -21,6 +21,8 @@ public:
 
 	sf::Vector2f mapToScreen(sf::Vector2u point);
 
+	std::vector<sf::Vector2i> ABMovement(sf::Vector2u StartPosition,sf::Vector2u endPosition);
+
 	bool move(GameObject& go, sf::Vector2i direction);
 
 	bool attack(GameObject& go, sf::Vector2i direction);
