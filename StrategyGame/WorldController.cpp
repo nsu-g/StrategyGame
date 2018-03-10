@@ -94,6 +94,17 @@ std::vector<sf::Vector2i> WorldController::ABMovement(sf::Vector2u StartPosition
 
 bool WorldController::move(GameObject& go, sf::Vector2i direction)
 {
+	if (go.position().x == 0 && direction.x < 0)
+	{
+		return false;
+	}
+	if (go.position().y == 0 && direction.y < 0)
+	{
+		return false;
+	}
+
+	go.position().x = go.position().x + direction.x;
+	go.position().y = go.position().y + direction.y;
 	// TODO: check for direction length, other objects from WorldModel don't lie in that coord
 	// return true if success
 	return true;

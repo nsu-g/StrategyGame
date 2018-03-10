@@ -3,8 +3,11 @@
 #include "GameObject.h"
 #include "WorldController.h"
 #include <SFML\Graphics.hpp>
+#include "Actors.h"
 
-class Student : public GameObject {
+class Actors;
+
+class Student : public Actors {
 	sf::Vector2u pos;
 	sf::Sprite space_marine;
 	sf::Texture texture1;

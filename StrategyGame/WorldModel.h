@@ -7,6 +7,13 @@
 #include "Order.h"
 #include "MoveOrder.h"
 #include "Student.h"
+#include "Actors.h"
+#include "Student.h"
+#include "Civilian.h"
+
+class Student;
+class Civilian;
+class Actors;
 
 class WorldModel {
 	static WorldModel* WORLD;
