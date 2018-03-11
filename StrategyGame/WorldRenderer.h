@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 #include "WorldModel.h"
+#include "GameObject.h"
+#include <vector>
 class WorldRenderer
 {
 	const float pi = 3.14159265358979323846;
@@ -82,6 +84,8 @@ class WorldRenderer
 
 	}
 
+	
+
 public:
 	WorldRenderer(sf::RenderTarget& renderer) : renderer(renderer)
 	{
@@ -102,6 +106,31 @@ public:
 		float y_offset = 2 * radius * cos(30 * pi / 180.f) * sin(60 * pi / 180.f); //при переходе на новую строчку всякий раз надо будет смещать первый шестиугольник в ряду на такой шаг вниз.
 
 		chosenHex = pixelToHex(ox, oy);
+	}
+
+
+	void DrawDeWay(sf::Vector2u first, std::vector<sf::Vector2i> steps)
+	{
+		sf::Vector2u start = first;
+		sf::CircleShape hexagon(radius, 6);
+		hexagon.setPosition(start.x, start.y);
+		hexagon.setOutlineThickness(1);
+		hexagon.setFillColor(sf::Color::Green);
+		hexagon.setOutlineColor(sf::Color::Transparent);
+		renderer.draw(hexagon);
+
+		for (int i; i < sizeof(steps); i++)
+		{
+			start.x = start.x + steps[i].x;
+			start.y = start.y + steps[i].y;
+
+			sf::CircleShape hexagon(radius, 6);
+			hexagon.setPosition(start.x, start.y);
+			hexagon.setOutlineThickness(1);
+			hexagon.setFillColor(sf::Color::Green);
+			hexagon.setOutlineColor(sf::Color::Transparent);
+			renderer.draw(hexagon);
+		}
 	}
 
 };
