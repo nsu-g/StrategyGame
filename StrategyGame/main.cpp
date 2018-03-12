@@ -4,7 +4,10 @@
 #include "WorldRenderer.h"
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
+	sf::ContextSettings settings;
+	settings.antialiasingLevel = 8;
+	
+	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!", sf::Style::Default, settings);
 	window.setVerticalSyncEnabled(true);
 	//sf::View gameView;
 
