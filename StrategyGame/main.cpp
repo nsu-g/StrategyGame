@@ -28,10 +28,7 @@ int main()
 			case sf::Event::MouseButtonPressed:
 				if (event.mouseButton.button == sf::Mouse::Left)
 				{
-					wr.selectHex(event.mouseButton.x, event.mouseButton.y);
-					std::cout << "the left button was pressed" << std::endl;
-					std::cout << "mouse x: " << event.mouseButton.x << std::endl;
-					std::cout << "mouse y: " << event.mouseButton.y << std::endl;
+					wr.Find_The_Chosen_Hex(event.mouseButton.x, event.mouseButton.y);
 				}
 			}
 			if (event.type == sf::Event::Closed)
