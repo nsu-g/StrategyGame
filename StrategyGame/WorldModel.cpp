@@ -16,3 +16,4 @@ WorldModel* WorldModel::getWorldInstance()
 		return WORLD;
 	return WORLD = new WorldModel();
 }
+

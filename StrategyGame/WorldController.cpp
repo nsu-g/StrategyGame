@@ -74,8 +74,9 @@ void WorldController::update()
 	auto& ord = WorldModel::getWorldInstance()->orders;
 	for (int i = 0; i < ord.size(); i++)
 	{
-		ord[i]->subject()->update();
-
+		//TODO: track each actors' order (don't do it twice), use std::map<shared_ptr<Actor>, bool>
+		ord[i]->subject()->update(); // update(ord[i])
+		//TODO: if no orders given for an actor, do update() without orders
 		if (ord[i]->finished())
 		{
 			ord.erase(ord.begin() + i);
