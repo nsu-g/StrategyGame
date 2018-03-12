@@ -21,4 +21,10 @@ void Actors::render(sf::RenderTarget& r)
 
 void Actors::update()
 {
+
+}
+
+void Actors::update(std::vector<std::shared_ptr<Order>>)
+{
+
 }

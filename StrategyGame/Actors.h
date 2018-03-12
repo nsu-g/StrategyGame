@@ -16,5 +16,6 @@ public:
 
 	virtual void update() override;
 
+	virtual void Actors::update(std::vector<std::shared_ptr<Order>>);
 
 };
