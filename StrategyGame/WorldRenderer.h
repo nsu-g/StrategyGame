@@ -38,7 +38,7 @@ class WorldRenderer
 		sf::CircleShape hexagon(radius, 6);
 		hexagon.setOrigin(radius, radius);
 		hexagon.setPosition(ox, oy);
-		hexagon.setOutlineThickness(1);
+		hexagon.setOutlineThickness(-1);
 		hexagon.setFillColor(sf::Color::Transparent);
 		hexagon.setOutlineColor(sf::Color::Green);
 
