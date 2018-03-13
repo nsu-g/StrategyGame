@@ -11,6 +11,7 @@ protected:
 	int hp;
 	int relig;
 	int power;
+	sf::Vector2u loc_pos;
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
@@ -25,4 +26,5 @@ public:
 	
 	virtual int& faith();
 	
+	virtual sf::Vector2u& loc_position();
 };
