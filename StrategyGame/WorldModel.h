@@ -9,6 +9,7 @@
 #include "Actors.h"
 #include "Student.h"
 #include "Civilian.h"
+class GameObject;
 class Student;
 class Civilian;
 class Actors;
