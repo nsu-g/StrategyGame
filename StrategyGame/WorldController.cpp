@@ -1,5 +1,7 @@
 #include "WorldController.h"
-
+#include "Food.h"
+class Food;
+class WorldController;
 WorldController::WorldController(unsigned int offset_x, unsigned int offset_y, float hex_radius) :
 	offset_x(offset_x),
 	offset_y(offset_y),
@@ -58,14 +60,60 @@ bool WorldController::attack(Student& go, sf::Vector2i direction)
 	// return true if success
 }
 
-std::vector<std::shared_ptr<GameObject>> WorldController::getNearActors(GameObject& go)
+std::vector<sf::Vector2u> WorldController::getNearCoord(sf::Vector2u go)
 {
-	return{};
+	std::vector<sf::Vector2u> neighbour(6);
+	neighbour[0] = go + sf::Vector2u(0, -1);
+	neighbour[1] = go + sf::Vector2u(1, 0);
+	neighbour[2] = go + sf::Vector2u(0, 1);
+	neighbour[3] = go + sf::Vector2u(-1, 0);
+	if (go.y % 2 == 0)
+	{
+		neighbour[4] = go + sf::Vector2u(-1, -1);
+		neighbour[5] = go + sf::Vector2u(-1, 1);
+	}
+	else
+	{
+		neighbour[4] = go + sf::Vector2u(1, -1);
+		neighbour[5] = go + sf::Vector2u(1, 1);
+	}
+	return neighbour;
+}
+
+std::vector<std::shared_ptr<Actors>> WorldController::getNearActors(GameObject& go)
+{
+	auto& world = WorldModel::getWorldInstance()->actors;
+	auto neighbour = getNearCoord(go.position());
+	std::vector<std::shared_ptr<Actors>> near(neighbour.size());
+	for (int i = 0; i < neighbour.size(); i++)
+	{
+		for (int k = 0; k < world.size(); k++) // Здесь ВОПРОС, потому что не уверен правильно ли вызвал длину вектора! 
+		{
+			if (world[k]->position() == neighbour[i])
+			{
+				near[i] = world[k];
+			}
+		}
+	}
+	return near;
 }
 
 std::vector<std::shared_ptr<GameObject>> WorldController::getNearLandscape(GameObject& go)
 {
-	return{};
+	auto& world = WorldModel::getWorldInstance()->landscape;
+	auto neighbour = getNearCoord(go.position());
+	std::vector<std::shared_ptr<GameObject>> near(neighbour.size());
+	for (int i = 0; i < neighbour.size(); i++)
+	{
+		for (int k = 0; k < world.size(); k++) // Здесь ВОПРОС, потому что не уверен правильно ли вызвал длину вектора! 
+		{
+			if (world[k]->position() == neighbour[i])
+			{
+				near[i] = world[k];
+			}
+		}
+	}
+	return near;
 }
 
 //TODO: handle all updates, delete orders that are finished, delete unnecessary objects
@@ -81,5 +129,25 @@ void WorldController::update()
 			ord.erase(ord.begin() + i);
 			i--; // deleted element, elements shifted
 		}
+	}
+}
+
+void WorldController::eat(Actors& player)
+{
+	auto& lands = WorldModel::getWorldInstance()->landscape;
+	for (int i = 0; i < lands.size(); i++)
+	{
+		if (lands[i]->position() == player.position())
+		{
+			Food* pf = dynamic_cast<Food*>(&(*(lands[i])));
+			if (pf != nullptr)
+			{
+				player.add_hp(pf->health());
+				lands.erase(lands.begin()+i);
+				break;
+			}
+			;
+		}
+
 	}
 }
