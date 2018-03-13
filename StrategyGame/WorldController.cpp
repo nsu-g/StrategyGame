@@ -1,14 +1,20 @@
 #include "WorldController.h"
+WorldController* WorldController::CONTROLLER = nullptr;
 
-WorldController::WorldController(unsigned int offset_x, unsigned int offset_y, float hex_radius) :
-	offset_x(offset_x),
-	offset_y(offset_y),
-	hex_radius(hex_radius)
+void WorldController::Set_Offsets(int Offset_X,int Offset_Y)
 {
-	hex_width = hex_radius * 2 * cos(30 * pi / 180.0f);
-	hex_h = hex_radius * sin(30 * pi / 180.0f);
+	offset_x = Offset_X;
+	offset_y = Offset_Y;
+	return;
 }
 
+void WorldController::Set_Radius(float Radius)
+{
+	hex_radius = Radius;
+	hex_width = hex_radius * 2 * cos(30 * pi / 180.0f);
+	hex_h = hex_radius * sin(30 * pi / 180.0f);
+	return;
+}
 
 sf::Vector2f WorldController::mapToScreen(sf::Vector2u point)
 {

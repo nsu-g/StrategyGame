@@ -1,5 +1,6 @@
 #pragma once
 
+#include <vector>
 #include "SFML/Graphics.hpp"
 
 #include "WorldController.h"
@@ -11,17 +12,21 @@
 class Finite_State_Machine
 {
 private:
+	
+	Finite_State_Machine()
+	{
+	}
 
 	enum States
 	{
 		Global_Screen,
-		Global_Screen_Hex_Selected
+		Global_Screen_Unit_Selected,
+		Global_Screen_Townn_Selected
 	};
 
-	sf::RenderWindow The_Window;
 
-	WorldController The_Controller;
-	WorldRenderer The_Renderer;
+
+	States Current_State = Global_Screen;
 
 public:
 

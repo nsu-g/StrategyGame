@@ -5,14 +5,19 @@
 #include "WorldModel.h"
 class WorldRenderer
 {
+	static WorldRenderer* RENDERER;
+	// Constructor is private so it can't be called from other code - Singletone pattern
+	WorldRenderer()
+	{
+	}
+	WorldRenderer(const WorldRenderer&) = delete;
+	void operator=(const WorldRenderer&) = delete;
+	
 	const float pi = 3.14159265358979323846;
-
 	float radius = 20;
-	sf::RenderTarget& renderer;
 
 	sf::Vector2i Chosen_Hex;
-
-	void renderHex(float ox, float oy)
+	void renderHex(float ox, float oy, sf::RenderTarget& renderer)
 	{
 		sf::CircleShape Hexagon_Internal(radius - 4, 6);
 		sf::CircleShape Hexagon_External(radius, 6);
@@ -32,8 +37,7 @@ class WorldRenderer
 		renderer.draw(Hexagon_External);
 		renderer.draw(Hexagon_Internal);
 	}
-
-	void renderGreenHex(float ox, float oy)
+	void renderGreenHex(float ox, float oy, sf::RenderTarget& renderer)
 	{
 		sf::CircleShape hexagon(radius, 6);
 		hexagon.setOrigin(radius, radius);
@@ -44,8 +48,7 @@ class WorldRenderer
 
 		renderer.draw(hexagon);
 	}
-
-	void renderGrid()
+	void renderGrid(sf::RenderTarget& renderer)
 	{
 		float x_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*cos(60 * pi / 180.f); //при переходе на новую строчку через раз надо будет смещать первый шестиугольник в ряду на такой шаг вправо или влево.
 		float y_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*sin(60 * pi / 180.f); //при переходе на новую строчку всякий раз надо будет смещать первый шестиугольник в ряду на такой шаг вниз.
@@ -54,33 +57,30 @@ class WorldRenderer
 		{
 			for (int j = 0; j < 10; j++)
 			{
-				renderHex(30 - (i % 2)*x_offset + j* (2 * radius*cos(30 * pi / 180.f) - 1), 30 + i*y_offset);
+				renderHex(30 - (i % 2)*x_offset + j* (2 * radius*cos(30 * pi / 180.f) - 1), 30 + i*y_offset, renderer);
 			}
 		}
 	}
-	void draw_The_ChosenHex()
+	void draw_The_ChosenHex(sf::RenderTarget& renderer)
 	{
 		float x_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*cos(60 * pi / 180.f); //при переходе на новую строчку через раз надо будет смещать первый шестиугольник в ряду на такой шаг вправо или влево.
 		float y_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*sin(60 * pi / 180.f); //при переходе на новую строчку всякий раз надо будет смещать первый шестиугольник в ряду на такой шаг вниз.
 
-		renderGreenHex(30 - (Chosen_Hex.y % 2) * x_offset + Chosen_Hex.x * (2 * radius * cos(30 * pi / 180.f) - 1), 30 + Chosen_Hex.y * y_offset);
+		renderGreenHex(30 - (Chosen_Hex.y % 2) * x_offset + Chosen_Hex.x * (2 * radius * cos(30 * pi / 180.f) - 1), 30 + Chosen_Hex.y * y_offset, renderer);
 	}
 
 public:
-	WorldRenderer(sf::RenderTarget& renderer) : renderer(renderer)
-	{
-	}
+	static WorldRenderer* Get_The_Renderer_Instance();
 
-	void render()
+	void render(sf::RenderTarget& renderer)
 	{
-		renderGrid();
-		draw_The_ChosenHex();
+		renderGrid(renderer);
+		draw_The_ChosenHex(renderer);
 		for (auto& i : WorldModel::getWorldInstance()->actors)
 		{
 			//i->render(renderer);
 		}
 	}
-
 	void Find_The_Chosen_Hex(float x, float y)
 	{
 		float x_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*cos(60 * pi / 180.f); //при переходе на новую строчку через раз надо будет смещать первый шестиугольник в ряду на такой шаг вправо или влево.
@@ -103,5 +103,4 @@ public:
 		}
 		return;
 	}
-
 };

@@ -13,8 +13,11 @@ int main()
 
 	//gameView.s
 	
-	WorldRenderer wr(window);
-	WorldController wc(30,30,20);
+	WorldRenderer* wr = WorldRenderer::Get_The_Renderer_Instance();
+	WorldController* wc = WorldController::Get_The_Controller_Instance();
+	wc->Set_Offsets(30, 30);
+	wc->Set_Radius(20);
+
 	while (window.isOpen())
 	{
 		sf::Event event;
@@ -28,7 +31,7 @@ int main()
 			case sf::Event::MouseButtonPressed:
 				if (event.mouseButton.button == sf::Mouse::Left)
 				{
-					wr.Find_The_Chosen_Hex(event.mouseButton.x, event.mouseButton.y);
+					wr->Find_The_Chosen_Hex(event.mouseButton.x, event.mouseButton.y);
 				}
 			}
 			if (event.type == sf::Event::Closed)
@@ -36,8 +39,8 @@ int main()
 		}
 		window.clear();
 		
-		wc.update();
-		wr.render();
+		wc->update();
+		wr->render(window);
 		
 		sf::sleep(sf::milliseconds(20));
 		
