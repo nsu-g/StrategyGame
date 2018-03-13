@@ -5,22 +5,33 @@
 #include "GameObject.h"
 
 class WorldController;
-
+class Actors;
 void Actors::render(sf::RenderTarget& r)
 {
-	texture1.loadFromFile("Sm_bolter_hero_2.png");
-	space.setTexture(texture1);
-	space.setScale(sf::Vector2f(0.1, 0.1));
 
-	WorldController wc(30, 30, 20);
-
-	space.setPosition(wc.mapToScreen(pos));
-
-	r.draw(space);
 }
 
 void Actors::update()
 {
 
+}
 
+void Actors::add_hp(int add)
+{
+	this->hp = this->hp + add;
+}
+
+void Actors::add_faith(int add)
+{
+	this->relig = this->relig + add;
+}
+
+int& Actors::health()
+{
+	return this->hp;
+}
+
+int& Actors::faith()
+{
+	return this->relig;
 }

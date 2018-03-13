@@ -9,12 +9,20 @@ class Actors : public GameObject {
 
 protected:
 	int hp;
-	int faith;
+	int relig;
+	int power;
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
 
 	virtual void update() override;
 
+	virtual void add_hp(int add);
 
+	virtual void add_faith(int add);
+
+	virtual int& health();
+	
+	virtual int& faith();
+	
 };
