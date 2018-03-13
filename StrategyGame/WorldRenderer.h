@@ -96,7 +96,7 @@ public:
 		renderGrid();
 		for (auto& i : WorldModel::getWorldInstance()->actors)
 		{
-			//i->render(renderer);
+			i->render(renderer);
 		}
 	}
 
@@ -116,7 +116,7 @@ public:
 		hexagon.setPosition(start.x, start.y);
 		hexagon.setOutlineThickness(1);
 		hexagon.setFillColor(sf::Color::Green);
-		hexagon.setOutlineColor(sf::Color::Transparent);
+		hexagon.setOutlineColor(sf::Color::Red);
 		renderer.draw(hexagon);
 
 		for (int i; i < sizeof(steps); i++)
@@ -128,7 +128,7 @@ public:
 			hexagon.setPosition(start.x, start.y);
 			hexagon.setOutlineThickness(1);
 			hexagon.setFillColor(sf::Color::Green);
-			hexagon.setOutlineColor(sf::Color::Transparent);
+			hexagon.setOutlineColor(sf::Color::Red);
 			renderer.draw(hexagon);
 		}
 	}

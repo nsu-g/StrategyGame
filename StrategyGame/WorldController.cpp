@@ -1,6 +1,7 @@
 #include "WorldController.h"
 #include "GameObject.h"
 #include "WorldRenderer.h"
+#include "Actors.h"
 
 WorldController::WorldController(unsigned int offset_x, unsigned int offset_y, float hex_radius) :
 	offset_x(offset_x),
@@ -139,15 +140,34 @@ std::vector<std::shared_ptr<GameObject>> WorldController::getNearLandscape(GameO
 void WorldController::update()
 {
 	auto& ord = WorldModel::getWorldInstance()->orders;
+	auto glob_Vis = std::map<std::shared_ptr<Actors>, bool> ();
+	auto& obj= WorldModel::getWorldInstance()->actors;
+
+
+	for (int k=0; k < obj.size(); k++)
+	{
+		glob_Vis.insert(std::pair<std::shared_ptr<Actors>, bool> (obj[k],false));
+	}
+
 	for (int i = 0; i < ord.size(); i++)
 	{
-		//TODO: track each actors' order (don't do it twice), use std::map<shared_ptr<Actor>, bool>
-		ord[i]->subject()->update(); // update(ord[i])
-		//TODO: if no orders given for an actor, do update() without orders
+		if (glob_Vis.find(ord[i]->subject())->second == false)
+		{
+			ord[i]->subject()->update(ord[i]); 
+			glob_Vis.find(ord[i]->subject())->second = true;
+		}
 		if (ord[i]->finished())
 		{
 			ord.erase(ord.begin() + i);
 			i--; // deleted element, elements shifted
+		}
+	}
+
+	for (int i = 0; i < obj.size(); i++)
+	{
+		if (glob_Vis.find(obj[i])->second == false)
+		{
+			ord[i]->subject()->update(); 
 		}
 	}
 }

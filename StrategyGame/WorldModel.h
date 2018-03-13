@@ -27,7 +27,7 @@ public:
 
 	//TODO: move to private, add getters
 	std::vector<std::shared_ptr<GameObject>> landscape;
-	std::vector<std::shared_ptr<GameObject>> actors;
+	std::vector<std::shared_ptr<Actors>> actors;
 	std::vector<std::shared_ptr<Order>> orders;
 
 	void LoadLevel(std::string filename)

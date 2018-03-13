@@ -6,7 +6,7 @@ WorldModel::WorldModel()
 {
 	auto ps = std::make_shared<Student>();
 	actors.push_back(ps);
-	orders.push_back(std::make_shared<MoveOrder>(ps, sf::Vector2u(2,2)));
+	orders.push_back(std::make_shared<MoveOrder>(ps, sf::Vector2u(2,10)));
 }
 
 

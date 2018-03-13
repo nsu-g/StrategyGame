@@ -19,5 +19,5 @@ void Student::update()
 	if (pos.x == 0)
 		pos = { 1, 1 };
 	else 
-		pos = { 0, 0 };
+		pos = { 1, 0 };
 }

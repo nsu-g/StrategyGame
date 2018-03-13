@@ -2,7 +2,9 @@
 
 #include "GameObject.h"
 #include <SFML\Graphics.hpp>
+#include "Order.h"
 
+class Order;
 class GameObject;
 
 class Actors : public GameObject {
@@ -16,6 +18,6 @@ public:
 
 	virtual void update() override;
 
-	virtual void Actors::update(std::vector<std::shared_ptr<Order>>);
+	virtual void Actors::update(std::shared_ptr<Order> &ord);
 
 };

@@ -24,7 +24,12 @@ void Actors::update()
 
 }
 
-void Actors::update(std::vector<std::shared_ptr<Order>>)
+void Actors::update(std::shared_ptr<Order> &ord)
 {
-
+	/*
+	if (ord == )
+	{
+		std::vector<sf::Vector2i> StepsVector = WorldController::ABMovement(Order);
+	}
+	*/
 }
