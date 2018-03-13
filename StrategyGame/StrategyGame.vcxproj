@@ -130,7 +130,6 @@
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Civilian.cpp" />
-    <ClCompile Include="Landscape.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="WorldController.cpp" />
     <ClCompile Include="WorldModel.cpp" />
@@ -141,7 +140,6 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Civilian.h" />
     <ClInclude Include="Actors.h" />
-    <ClInclude Include="Landscape.h" />
     <ClInclude Include="MoveOrder.h" />
     <ClInclude Include="Order.h" />
     <ClInclude Include="Student.h" />

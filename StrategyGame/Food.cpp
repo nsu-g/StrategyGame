@@ -11,7 +11,7 @@ void Food::update()
 
 }
 
-int Food::hp()
+int Food::health()
 {
 	return this->hp;
 }

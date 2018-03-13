@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Landscape.h"
+#include "GameObject.h"
 #include "WorldController.h"
 #include <SFML\Graphics.hpp>
 
-class City : public Landscape {
-	std::vector<int> dwellers;
-	float faith; // вера в процентах
-	std::vector<float> kill; // (для инквизитора, для еретиков) или наоборот
+class City : public GameObject {
+	std::vector<int> dw;
+	float relig; // вера в процентах
+	std::vector<float> murd; // (для инквизитора, для еретиков) или наоборот
 	bool pick;
 
 public:

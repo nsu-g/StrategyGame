@@ -9,9 +9,9 @@ class Landscape : public GameObject {
 
 
 public:
-	virtual void render(sf::RenderTarget& r) override;
+	virtual void render(sf::RenderTarget& r) override = 0;
 
-	virtual void update() override;
+	virtual void update() override = 0;
 
 
 };

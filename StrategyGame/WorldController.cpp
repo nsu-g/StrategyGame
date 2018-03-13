@@ -98,11 +98,11 @@ std::vector<std::shared_ptr<Actors>> WorldController::getNearActors(GameObject& 
 	return near;
 }
 
-std::vector<std::shared_ptr<Landscape>> WorldController::getNearLandscape(GameObject& go)
+std::vector<std::shared_ptr<GameObject>> WorldController::getNearLandscape(GameObject& go)
 {
 	auto& world = WorldModel::getWorldInstance()->landscape;
 	auto neighbour = getNearCoord(go.position());
-	std::vector<std::shared_ptr<Landscape>> near(neighbour.size());
+	std::vector<std::shared_ptr<GameObject>> near(neighbour.size());
 	for (int i = 0; i < neighbour.size(); i++)
 	{
 		for (int k = 0; k < world.size(); k++) // Здесь ВОПРОС, потому что не уверен правильно ли вызвал длину вектора! 
@@ -142,8 +142,8 @@ void WorldController::eat(Actors& player)
 			Food* pf = dynamic_cast<Food*>(&(*(lands[i])));
 			if (pf != nullptr)
 			{
-				player.add_hp(pf->hp);
-				delete pf;
+				player.add_hp(pf->health());
+				lands.erase(lands.begin()+i);
 				break;
 			}
 			;

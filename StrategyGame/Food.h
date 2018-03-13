@@ -1,10 +1,10 @@
 #pragma once
 
-#include "Landscape.h"
+#include "GameObject.h"
 #include "WorldController.h"
 #include <SFML\Graphics.hpp>
 
-class Food : public Landscape {
+class Food : public GameObject {
 	sf::Vector2u pos;
 	sf::Sprite food;
 	sf::Texture texture;
@@ -15,5 +15,5 @@ public:
 
 	virtual void update() override;
 
-	int hp();
+	int health();
 };
