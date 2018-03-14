@@ -87,7 +87,7 @@ std::vector<std::shared_ptr<Actors>> WorldController::getNearActors(GameObject& 
 	std::vector<std::shared_ptr<Actors>> near(neighbour.size());
 	for (int i = 0; i < neighbour.size(); i++)
 	{
-		for (int k = 0; k < world.size(); k++) // Здесь ВОПРОС, потому что не уверен правильно ли вызвал длину вектора! 
+		for (int k = 0; k < world.size(); k++) 
 		{
 			if (world[k]->position() == neighbour[i])
 			{
@@ -105,7 +105,7 @@ std::vector<std::shared_ptr<GameObject>> WorldController::getNearLandscape(GameO
 	std::vector<std::shared_ptr<GameObject>> near(neighbour.size());
 	for (int i = 0; i < neighbour.size(); i++)
 	{
-		for (int k = 0; k < world.size(); k++) // Здесь ВОПРОС, потому что не уверен правильно ли вызвал длину вектора! 
+		for (int k = 0; k < world.size(); k++) 
 		{
 			if (world[k]->position() == neighbour[i])
 			{
@@ -146,8 +146,8 @@ void WorldController::eat(Actors& player)
 				lands.erase(lands.begin()+i);
 				break;
 			}
-			;
 		}
 
 	}
+	player.check_max();
 }
