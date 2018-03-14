@@ -10,9 +10,17 @@ WorldModel::WorldModel()
 }
 
 
+void WorldModel::SaveLevel(std::string filename)
+{
+	auto& actors = WorldModel::getWorldInstance()->actors;
+	auto& landscape = WorldModel::getWorldInstance()->landscape;
+
+}
+
 WorldModel* WorldModel::getWorldInstance()
 {
 	if (WORLD != nullptr)
 		return WORLD;
 	return WORLD = new WorldModel();
 }
+

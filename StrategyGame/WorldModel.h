@@ -9,7 +9,6 @@
 #include "Actors.h"
 #include "Student.h"
 #include "Civilian.h"
-class GameObject;
 class Student;
 class Civilian;
 class Actors;
@@ -34,10 +33,7 @@ public:
 		//TODO load model from file. (For different game levels or save/load feature)
 	}
 
-	void SaveLevel(std::string filename)
-	{
-		//TODO save model to file
-	}
+	void SaveLevel(std::string filename);
 
 	// static method HAS NO OBJECT, calls to class
 	static WorldModel* getWorldInstance();
