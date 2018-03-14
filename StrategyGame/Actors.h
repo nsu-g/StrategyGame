@@ -26,5 +26,7 @@ public:
 	
 	virtual int& faith();
 	
+	virtual void check_max();
+
 	virtual sf::Vector2u& loc_position();
 };

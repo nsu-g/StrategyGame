@@ -1,13 +1,13 @@
 #include "Actors.h"
+#include "City.h"
 #include "WorldController.h"
 #include "MoveOrder.h"
 #include "WorldRenderer.h"
 #include "GameObject.h"
-#include "City.h"
 
+class City;
 class WorldController;
 class Actors;
-class City;
 void Actors::render(sf::RenderTarget& r)
 {
 
@@ -38,6 +38,12 @@ int& Actors::faith()
 	return this->relig;
 }
 
+void Actors::check_max()
+{
+	if (this->hp > 100) this->hp = 100;
+	if (this->relig > 100) this->relig = 100;
+}
+
 sf::Vector2u& Actors::loc_position()
 {
 	auto& world = WorldModel::getWorldInstance()->landscape;
@@ -52,6 +58,6 @@ sf::Vector2u& Actors::loc_position()
 			}
 		}
 	}
-
-
+	return this->position();
 }
+
