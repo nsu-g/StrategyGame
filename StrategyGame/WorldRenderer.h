@@ -72,7 +72,15 @@ class WorldRenderer
 public:
 	static WorldRenderer* Get_The_Renderer_Instance();
 
-	void render(sf::RenderTarget& renderer)
+	void render_Global_Screen(sf::RenderTarget& renderer)
+	{
+		renderGrid(renderer);
+		for (auto& i : WorldModel::getWorldInstance()->actors)
+		{
+			//i->render(renderer);
+		}
+	}
+	void render_Global_Screen_With_A_Hex_Selected(sf::RenderTarget& renderer)
 	{
 		renderGrid(renderer);
 		draw_The_ChosenHex(renderer);
