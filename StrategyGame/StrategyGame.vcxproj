@@ -126,13 +126,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actors.cpp" />
+    <ClCompile Include="Finite-State Machine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Civilian.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="WorldController.cpp" />
     <ClCompile Include="WorldModel.cpp" />
+    <ClCompile Include="WorldRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Finite-State Machine.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Civilian.h" />
     <ClInclude Include="Actors.h" />
