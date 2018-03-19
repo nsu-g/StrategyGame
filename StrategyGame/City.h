@@ -5,6 +5,7 @@
 #include <SFML\Graphics.hpp>
 
 class City : public GameObject {
+	
 	std::vector<int> dw;
 	float relig; // вера в процентах
 	std::vector<float> murd; // (для инквизитора, для еретиков) или наоборот
