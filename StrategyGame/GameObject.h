@@ -7,14 +7,13 @@ class GameObject
 {
 protected:
 	sf::Vector2u pos;
-	sf::Sprite space;
-	sf::Texture texture1;
+	sf::Sprite sprite;
+	sf::Texture texture;
 
 public:
 	virtual void render(sf::RenderTarget&) = 0;
 	virtual void update() = 0;
 	virtual sf::Vector2u& position()
-
 	{
 		return pos;
 	}

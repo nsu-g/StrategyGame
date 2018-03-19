@@ -33,10 +33,17 @@
     <ClCompile Include="Actors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+
+    <ClCompile Include="City.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Food.cpp">
+
     <ClCompile Include="Finite-State Machine.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="WorldRenderer.cpp">
+
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,6 +75,10 @@
     <ClInclude Include="Actors.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="City.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Food.h">
     <ClInclude Include="Finite-State Machine.h">
       <Filter>Header Files</Filter>
     </ClInclude>

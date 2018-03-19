@@ -3,10 +3,15 @@
 #include <SFML\System.hpp>
 #include "Student.h"
 #include "WorldModel.h"
+#include "Actors.h"
+#include "Food.h"
+
 //TODO : Singleton
 class Student;
 class Civilian;
 class Actors;
+class Food;
+
 class WorldController
 {
 
@@ -53,12 +58,14 @@ public:
 
 	bool attack(Student& go, sf::Vector2i direction);
 
-	std::vector<std::shared_ptr<GameObject>> getNearActors(GameObject& go);
+	std::vector<sf::Vector2u> getNearCoord(sf::Vector2u go);
+
+	std::vector<std::shared_ptr<Actors>> getNearActors(GameObject& go);
 
 	std::vector<std::shared_ptr<GameObject>> getNearLandscape(GameObject& go);
 
 	//TODO: handle all updates, delete orders that are finished, delete unnecessary objects
 	void update();
 
-
+	void eat(Actors& player);
 };

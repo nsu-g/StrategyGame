@@ -126,6 +126,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Actors.cpp" />
+    <ClCompile Include="City.cpp" />
+    <ClCompile Include="Food.cpp" />
     <ClCompile Include="Finite-State Machine.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Civilian.cpp" />
@@ -135,6 +137,8 @@
     <ClCompile Include="WorldRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="City.h" />
+    <ClInclude Include="Food.h" />
     <ClInclude Include="Finite-State Machine.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Civilian.h" />
