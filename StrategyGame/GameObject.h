@@ -17,4 +17,13 @@ public:
 	{
 		return pos;
 	}
+	virtual sf::Sprite& get_sprite()
+	{
+		return sprite;
+	}
+	
+	virtual sf::Texture& get_texture()
+	{
+		return texture;
+	}
 };
