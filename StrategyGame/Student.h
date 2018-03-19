@@ -1,18 +1,24 @@
 #pragma once
 
-#include "Actors.h"
+#include "GameObject.h"
+#include "WorldController.h"
 #include <SFML\Graphics.hpp>
-#include "MoveOrder.h"
 
-class Actors;
-
-class Student: public Actors {
-
-
+class Student : public GameObject {
+	sf::Vector2u pos;
+	sf::Sprite space_marine;
+	sf::Texture texture1;
 public:
-	virtual void render(sf::RenderTarget& r);
+	virtual void render(sf::RenderTarget& r) override;
 
-	virtual void update(); 
+	virtual void update() override; 
 
+	//TODO: virtual void update(Order&) override;
+	//TODO: virtual void update(MoveOrder&) override;
 
+	virtual sf::Vector2u& position() override
+
+	{
+		return pos;
+	}
 };

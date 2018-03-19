@@ -2,15 +2,23 @@
 #include "Food.h"
 class Food;
 class WorldController;
-WorldController::WorldController(unsigned int offset_x, unsigned int offset_y, float hex_radius) :
-	offset_x(offset_x),
-	offset_y(offset_y),
-	hex_radius(hex_radius)
+
+WorldController* WorldController::CONTROLLER = nullptr;
+
+void WorldController::Set_Offsets(int Offset_X,int Offset_Y)
 {
-	hex_width = hex_radius * 2 * cos(30 * pi / 180.0f);
-	hex_h = hex_radius * sin(30 * pi / 180.0f);
+	offset_x = Offset_X;
+	offset_y = Offset_Y;
+	return;
 }
 
+void WorldController::Set_Radius(float Radius)
+{
+	hex_radius = Radius;
+	hex_width = hex_radius * 2 * cos(30 * pi / 180.0f);
+	hex_h = hex_radius * sin(30 * pi / 180.0f);
+	return;
+}
 
 sf::Vector2f WorldController::mapToScreen(sf::Vector2u point)
 {
@@ -122,8 +130,9 @@ void WorldController::update()
 	auto& ord = WorldModel::getWorldInstance()->orders;
 	for (int i = 0; i < ord.size(); i++)
 	{
-		ord[i]->subject()->update();
-
+		//TODO: track each actors' order (don't do it twice), use std::map<shared_ptr<Actor>, bool>
+		ord[i]->subject()->update(); // update(ord[i])
+		//TODO: if no orders given for an actor, do update() without orders
 		if (ord[i]->finished())
 		{
 			ord.erase(ord.begin() + i);

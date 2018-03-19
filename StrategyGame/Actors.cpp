@@ -16,6 +16,14 @@ void Actors::render(sf::RenderTarget& r)
 void Actors::update()
 {
 
+	texture1.loadFromFile("Textures/Sm_bolter_hero_2.png");
+	space.setTexture(texture1);
+	space.setScale(sf::Vector2f(0.1, 0.1));
+
+	WorldController* wc = WorldController::Get_The_Controller_Instance();
+
+	space.setPosition(wc->mapToScreen(pos));
+
 }
 
 void Actors::add_hp(int add)
