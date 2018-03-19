@@ -29,4 +29,6 @@ public:
 	virtual void check_max();
 
 	virtual sf::Vector2u& loc_position();
+
+	virtual int& get_power();
 };

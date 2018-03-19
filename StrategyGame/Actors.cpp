@@ -61,3 +61,8 @@ sf::Vector2u& Actors::loc_position()
 	return this->position();
 }
 
+int& Actors::get_power()
+{
+	return this->power;
+}
+
