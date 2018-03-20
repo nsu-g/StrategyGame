@@ -3,8 +3,10 @@
 #include "GameObject.h"
 #include "WorldController.h"
 #include <SFML\Graphics.hpp>
+#include "Actors.h"
+class Actors;
 
-class Student : public GameObject {
+class Student : public Actors {
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
@@ -14,9 +16,4 @@ public:
 	//TODO: virtual void update(Order&) override;
 	//TODO: virtual void update(MoveOrder&) override;
 
-	virtual sf::Vector2u& position() override
-
-	{
-		return pos;
-	}
 };
