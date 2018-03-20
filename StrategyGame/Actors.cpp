@@ -10,19 +10,20 @@ class WorldController;
 class Actors;
 void Actors::render(sf::RenderTarget& r)
 {
+	this->get_texture().loadFromFile("Sm_bolter_hero_2.png");
+	this->get_sprite().setTexture(get_texture());
+	this->get_sprite().setScale(sf::Vector2f(0.1, 0.1));
+
+	WorldController* wc = WorldController::Get_The_Controller_Instance();
+
+	this->get_sprite().setPosition(wc->mapToScreen(pos));
+
+	r.draw(this->get_sprite());
 
 }
 
 void Actors::update()
 {
-
-	texture1.loadFromFile("Textures/Sm_bolter_hero_2.png");
-	space.setTexture(texture1);
-	space.setScale(sf::Vector2f(0.1, 0.1));
-
-	WorldController* wc = WorldController::Get_The_Controller_Instance();
-
-	space.setPosition(wc->mapToScreen(pos));
 
 }
 
