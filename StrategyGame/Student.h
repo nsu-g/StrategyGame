@@ -5,9 +5,7 @@
 #include <SFML\Graphics.hpp>
 
 class Student : public GameObject {
-	sf::Vector2u pos;
-	sf::Sprite space_marine;
-	sf::Texture texture1;
+
 public:
 	virtual void render(sf::RenderTarget& r) override;
 

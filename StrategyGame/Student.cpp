@@ -8,15 +8,15 @@ class WorldController;
 
 void Student::render(sf::RenderTarget& r)
 {
-	texture1.loadFromFile("Sm_bolter_hero_2.png");
-	space.setTexture(texture1);
-	space.setScale(sf::Vector2f(0.1, 0.1));
+	this->get_texture().loadFromFile("Sm_bolter_hero_2.png");
+	this->get_sprite().setTexture(get_texture());
+	this->get_sprite().setScale(sf::Vector2f(0.1, 0.1));
 	
 	WorldController* wc = WorldController::Get_The_Controller_Instance();
 
-	space.setPosition(wc->mapToScreen(pos));
+	this->get_sprite().setPosition(wc->mapToScreen(pos));
 
-	r.draw(space);
+	r.draw(this->get_sprite());
 
 }
 
