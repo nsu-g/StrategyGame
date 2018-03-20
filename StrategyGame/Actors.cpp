@@ -4,6 +4,7 @@
 #include "MoveOrder.h"
 #include "WorldRenderer.h"
 #include "GameObject.h"
+#include <fstream>
 
 class City;
 class WorldController;
@@ -74,4 +75,5 @@ int& Actors::get_power()
 {
 	return this->power;
 }
+
 

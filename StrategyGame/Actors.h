@@ -31,4 +31,6 @@ public:
 	virtual sf::Vector2u& loc_position();
 
 	virtual int& get_power();
+
+	virtual void save_me(std::ofstream fout) override = 0;
 };

@@ -12,5 +12,5 @@ public:
 
 	virtual void update() override;
 
-
+	virtual void save_me(std::ofstream fout) override;
 };
