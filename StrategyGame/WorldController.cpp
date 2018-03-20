@@ -70,20 +70,20 @@ bool WorldController::attack(Student& go, sf::Vector2i direction)
 
 std::vector<sf::Vector2u> WorldController::getNearCoord(sf::Vector2u go)
 {
-	std::vector<sf::Vector2u> neighbour(6);
-	neighbour[0] = go + sf::Vector2u(0, -1);
-	neighbour[1] = go + sf::Vector2u(1, 0);
-	neighbour[2] = go + sf::Vector2u(0, 1);
-	neighbour[3] = go + sf::Vector2u(-1, 0);
+	std::vector<sf::Vector2u> neighbour;
+	neighbour.push_back(go + sf::Vector2u(1, 0));
+	neighbour.push_back(go + sf::Vector2u(0, 1));
+	if (go.x != 0) neighbour.push_back(go + sf::Vector2u(-1, 0));
+	if (go.y != 0) neighbour.push_back(go + sf::Vector2u(0, -1));
 	if (go.y % 2 == 0)
 	{
-		neighbour[4] = go + sf::Vector2u(-1, -1);
-		neighbour[5] = go + sf::Vector2u(-1, 1);
+		if (go.y != 0 && go.x != 0) neighbour.push_back(go + sf::Vector2u(-1, -1));
+		if (go.x != 0) neighbour.push_back(go + sf::Vector2u(-1, 1));
 	}
 	else
 	{
-		neighbour[4] = go + sf::Vector2u(1, -1);
-		neighbour[5] = go + sf::Vector2u(1, 1);
+		if (go.y != 0) neighbour.push_back(go + sf::Vector2u(1, -1));
+		neighbour.push_back(go + sf::Vector2u(1, 1));
 	}
 	return neighbour;
 }
@@ -95,7 +95,7 @@ std::vector<std::shared_ptr<Actors>> WorldController::getNearActors(GameObject& 
 	std::vector<std::shared_ptr<Actors>> near(neighbour.size());
 	for (int i = 0; i < neighbour.size(); i++)
 	{
-		for (int k = 0; k < world.size(); k++) 
+		for (unsigned int k = 0; k < world.size(); k++) 
 		{
 			if (world[k]->position() == neighbour[i])
 			{
