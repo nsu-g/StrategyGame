@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML\Graphics.hpp>
-
+#include <fstream>
 //Abstract class which will be parent to other objects, has position, renders to image, updates when world changes
 class GameObject
 {
@@ -26,4 +26,6 @@ public:
 	{
 		return texture;
 	}
+
+	virtual void save_me(std::ofstream fout) = 0;
 };
