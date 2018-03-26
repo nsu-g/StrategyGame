@@ -34,7 +34,7 @@ void WorldRenderer::Find_The_Chosen_Hex(float x, float y)
 			if ((abs(x - CurrentHex_Center_X) <= radius*cos(30 * pi / 180.f)) &&
 				(abs(y - CurrentHex_Center_Y) <= radius - abs(x - CurrentHex_Center_X) / sqrt(3)))
 			{
-				Chosen_Hex = sf::Vector2i(j, i); //Именно в таком порядке, так как j - номер столбца в матрице, сиречь координата по X.
+				Chosen_Hex = sf::Vector2u(j, i); //Именно в таком порядке, так как j - номер столбца в матрице, сиречь координата по X.
 				A_Hex_Is_Active = 1; //Если мы нашли гексагон, на который щёлкнули, то надо это записать.
 				return;
 			}
@@ -55,5 +55,10 @@ void WorldRenderer::render_The_ChosenHex(sf::RenderTarget & renderer)
 bool WorldRenderer::Is_A_Hex_Active()
 {
 	return A_Hex_Is_Active;
+}
+
+sf::Vector2u WorldRenderer::Get_The_Chosen_Hex()
+{
+	return Chosen_Hex;
 }
 

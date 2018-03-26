@@ -10,9 +10,10 @@ class WorldController;
 class Actors;
 void Actors::render(sf::RenderTarget& r)
 {
-	this->get_texture().loadFromFile("Sm_bolter_hero_2.png");
+	this->get_texture().loadFromFile("Textures/Civilian 92x149 Real Size.png"); //Вообще говоря, это должен быть Гражданский. Но пока других "своих" картинок нет. Да и будут ли?
+	this->get_texture().setSmooth(true);
 	this->get_sprite().setTexture(get_texture());
-	this->get_sprite().setScale(sf::Vector2f(0.1, 0.1));
+	this->get_sprite().setScale(sf::Vector2f(0.4,0.4));
 
 	WorldController* wc = WorldController::Get_The_Controller_Instance();
 

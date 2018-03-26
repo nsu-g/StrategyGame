@@ -16,7 +16,7 @@ class WorldRenderer
 	const float pi = 3.14159265358979323846;
 	float radius = 20;
 
-	sf::Vector2i Chosen_Hex;
+	sf::Vector2u Chosen_Hex;
 	bool A_Hex_Is_Active = 0;
 	void renderHex(float ox, float oy, sf::RenderTarget& renderer)
 	{
@@ -70,5 +70,6 @@ public:
 	void Find_The_Chosen_Hex(float x, float y);
 	void render_The_ChosenHex(sf::RenderTarget& renderer);
 	bool Is_A_Hex_Active(); //Метод вызова приватного поля понадобится в конечном автомате.
+	sf::Vector2u Get_The_Chosen_Hex(); //Метод вызова приватного поля понадобится в конечном автомате.
 
 };

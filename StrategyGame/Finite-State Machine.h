@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <iostream>
 #include "SFML/Graphics.hpp"
 
 #include "WorldController.h"
@@ -24,6 +25,7 @@ private:
 
 	WorldController* The_Controller = WorldController::Get_The_Controller_Instance();
 	WorldRenderer* The_Renderer = WorldRenderer::Get_The_Renderer_Instance();
+	WorldModel* The_Model = WorldModel::getWorldInstance();
 
 	sf::RenderTarget& The_Target; //Скорее всего, это будет окно.
 
