@@ -9,6 +9,9 @@
 #include "Actors.h"
 #include "Student.h"
 #include "Civilian.h"
+
+#include "SFML/Graphics.hpp"
+
 class Student;
 class Civilian;
 class Actors;
@@ -37,6 +40,11 @@ public:
 
 	// static method HAS NO OBJECT, calls to class
 	static WorldModel* getWorldInstance();
+
+	//Render functions
+
+	void Render_Actors(sf::RenderTarget& The_Target);
+	void Render_Landscapes(sf::RenderTarget& The_Target);
 
 };
 

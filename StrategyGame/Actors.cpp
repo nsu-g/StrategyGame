@@ -10,10 +10,11 @@ class WorldController;
 class Actors;
 void Actors::render(sf::RenderTarget& r)
 {
-	this->get_texture().loadFromFile("Textures/Civilian 92x149 Real Size.png"); //Вообще говоря, это должен быть Гражданский. Но пока других "своих" картинок нет. Да и будут ли?
+	this->get_texture().loadFromFile("Textures/Civilian 92x149 Real_Size.png"); //This picture was supposed to be a civilian. But I have not drawn other sprites yet.
 	this->get_texture().setSmooth(true);
 	this->get_sprite().setTexture(get_texture());
-	this->get_sprite().setScale(sf::Vector2f(0.4,0.4));
+	this->get_sprite().setScale(sf::Vector2f(0.3,0.3));
+	this->get_sprite().setOrigin(46, 149); //X-coordinate of the sprite is set to the centre of the picture, Y-coordinat - to its bottom.
 
 	WorldController* wc = WorldController::Get_The_Controller_Instance();
 

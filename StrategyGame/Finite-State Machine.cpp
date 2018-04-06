@@ -34,6 +34,8 @@ void Finite_State_Machine::render()
 
 			break;
 	}
+	The_Model->Render_Actors(The_Target); //Render all actors.
+	The_Model->Render_Landscapes(The_Target); //Render all landscapes.
 }
 
 void Finite_State_Machine::click(sf::Vector2i Position)

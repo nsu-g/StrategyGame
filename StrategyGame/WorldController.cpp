@@ -7,28 +7,29 @@ WorldController* WorldController::CONTROLLER = nullptr;
 
 void WorldController::Set_Offsets(int Offset_X,int Offset_Y)
 {
-	offset_x = Offset_X;
-	offset_y = Offset_Y;
+	offset_x = Offset_X; //this is global offset of the whole map
+	offset_y = Offset_Y; //this is global offset of the whole map
 	return;
 }
 
 void WorldController::Set_Radius(float Radius)
 {
 	hex_radius = Radius;
-	hex_width = hex_radius * 2 * cos(30 * pi / 180.0f);
-	hex_h = hex_radius * sin(30 * pi / 180.0f);
 	return;
 }
 
 sf::Vector2f WorldController::mapToScreen(sf::Vector2u point)
 {
+	float x_offset_of_line = (2 * hex_radius*cos(30 * pi / 180.f) - 1)*cos(60 * pi / 180.f); //this is local offset of one particular line according to its position on the screen
+	float y_offset_of_line = (2 * hex_radius*cos(30 * pi / 180.f) - 1)*sin(60 * pi / 180.f); //this is local offset of one particular line according to its position on the screen
+
 	if (point.y % 2 == 0)
 	{
-		return{ offset_x + hex_width*point.x, offset_y + (hex_radius + hex_h) * 2 * (point.y) / 2 };
+		return{ offset_x + point.x*(2 * hex_radius * cos(30 * pi / 180.f) - 1), offset_y + point.y*y_offset_of_line};
 	}
 	else {
-		return{ offset_x + hex_width / 2 + hex_width*point.x,
-			offset_y + hex_radius + hex_h + (hex_radius + hex_h) * 2 * (point.y - 1) / 2 };
+		return{ offset_x - x_offset_of_line / 2 + point.x*(2 * hex_radius * cos(30 * pi / 180.f) - 1),
+			offset_y + point.y*y_offset_of_line };
 	}
 }
 

@@ -23,9 +23,6 @@ class WorldController
 		offset_y = 30;
 
 		hex_radius = 20;
-		hex_width = hex_radius * 2 * cos(30 * pi / 180.0f);
-		hex_h = hex_radius * sin(30 * pi / 180.0f);
-
 	}
 	WorldController(const WorldController&) = delete;
 	void operator=(const WorldController&) = delete;

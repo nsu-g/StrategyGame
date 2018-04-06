@@ -33,6 +33,9 @@ public:
 
 	Finite_State_Machine(sf::RenderTarget& The_Target) : The_Target(The_Target)
 	{
+		auto New_Civilian = std::make_shared<Actors>(); //Let's create a new Actor in order to check our code.
+		New_Civilian->position() = sf::Vector2u(2,2);
+		The_Model->actors.push_back(New_Civilian);		
 	}
 
 	void render();

@@ -1,5 +1,5 @@
 #include "WorldModel.h"
-#include <fstream>
+
 // Initialize model with zero
 WorldModel* WorldModel::WORLD = nullptr;
 
@@ -32,5 +32,21 @@ WorldModel* WorldModel::getWorldInstance()
 	if (WORLD != nullptr)
 		return WORLD;
 	return WORLD = new WorldModel();
+}
+
+void WorldModel::Render_Actors(sf::RenderTarget& The_Target) //Render all elements of the "actors" vector
+{
+	for (int i = 0; i < actors.size(); i++)
+	{
+		actors[i]->render(The_Target);
+	}
+}
+
+void WorldModel::Render_Landscapes(sf::RenderTarget & The_Target) //Render all elements of the "landscape" vector
+{
+	for (int i = 0; i < landscape.size(); i++)
+	{
+		landscape[i]->render(The_Target);
+	}
 }
 
