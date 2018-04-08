@@ -51,8 +51,8 @@ class WorldRenderer
 	}
 	void renderGrid(sf::RenderTarget& renderer)
 	{
-		float x_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*cos(60 * pi / 180.f); //при переходе на новую строчку через раз надо будет смещать первый шестиугольник в ряду на такой шаг вправо или влево.
-		float y_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*sin(60 * pi / 180.f); //при переходе на новую строчку всякий раз надо будет смещать первый шестиугольник в ряду на такой шаг вниз.
+		float x_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*cos(60 * pi / 180.f); //this is local offset of one particular line according to its position on the screen
+		float y_offset = (2 * radius*cos(30 * pi / 180.f) - 1)*sin(60 * pi / 180.f); //this is local offset of one particular line according to its position on the screen
 		
 		for (int i = 0; i < 10; i++)
 		{
@@ -69,7 +69,7 @@ public:
 	void render_Global_Screen(sf::RenderTarget& renderer);
 	void Find_The_Chosen_Hex(float x, float y);
 	void render_The_ChosenHex(sf::RenderTarget& renderer);
-	bool Is_A_Hex_Active(); //Метод вызова приватного поля понадобится в конечном автомате.
-	sf::Vector2u Get_The_Chosen_Hex(); //Метод вызова приватного поля понадобится в конечном автомате.
+	bool Is_A_Hex_Active(); //This method would be usefull in the Machine.
+	sf::Vector2u Get_The_Chosen_Hex(); //This method would be usefull in the Machine.
 
 };

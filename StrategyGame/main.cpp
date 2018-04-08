@@ -30,7 +30,7 @@ int main()
 			case sf::Event::MouseButtonPressed:
 				if (event.mouseButton.button == sf::Mouse::Left)
 				{
-					The_Machine.click(sf::Vector2i(sf::Mouse::getPosition(window))); //Стоит заметить, что позиция задаётся именно относительно окна.
+					The_Machine.click(sf::Vector2i(sf::Mouse::getPosition(window))); //Position is related to the window, not to the whole screen.
 				}
 			}
 			if (event.type == sf::Event::Closed)

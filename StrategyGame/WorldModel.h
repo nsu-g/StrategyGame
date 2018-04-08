@@ -9,6 +9,7 @@
 #include "Actors.h"
 #include "Student.h"
 #include "Civilian.h"
+#include "City.h"
 
 #include "SFML/Graphics.hpp"
 
