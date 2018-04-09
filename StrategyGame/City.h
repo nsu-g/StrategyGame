@@ -9,7 +9,6 @@ class City : public GameObject {
 	std::vector<int> dw;
 	float relig; // вера в процентах
 	std::vector<float> murd; // (для инквизитора, для еретиков) или наоборот
-	bool pick;
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
@@ -27,7 +26,5 @@ public:
 	float faith();
 
 	std::vector<float> kill();
-
-	void pick_up();
 
 };
