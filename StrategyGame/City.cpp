@@ -1,4 +1,5 @@
 #include "City.h"
+#include <fstream>
 class City;
 
 void City::render(sf::RenderTarget& r)
@@ -34,4 +35,10 @@ float City::faith()
 std::vector<float> City::kill()
 {
 	return this->murd;
+}
+
+void City::save(std::ofstream fout)
+{
+	std::string name = "City";
+	//save_me(fout, name);
 }

@@ -3,6 +3,7 @@
 #include "GameObject.h"
 #include "WorldController.h"
 #include <SFML\Graphics.hpp>
+#include <fstream>
 
 class City : public GameObject {
 	
@@ -21,4 +22,5 @@ public:
 
 	std::vector<float> kill();
 
+	void save(std::ofstream fout);
 };
