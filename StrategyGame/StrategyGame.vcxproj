@@ -129,6 +129,7 @@
     <ClCompile Include="City.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="Finite-State Machine.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Civilian.cpp" />
     <ClCompile Include="Student.cpp" />
