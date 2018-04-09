@@ -6,7 +6,7 @@ void Tree::render(sf::RenderTarget& r)
 
 }
 
-void Food::update()
+void Tree::update()
 {
 
 }

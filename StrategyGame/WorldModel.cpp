@@ -13,18 +13,18 @@ WorldModel::WorldModel()
 
 void WorldModel::SaveLevel(std::string filename)
 {
-// 	auto& actors = WorldModel::getWorldInstance()->actors;
-// 	auto& landscape = WorldModel::getWorldInstance()->landscape;
-// 	std::ofstream fout("H:\\" + filename + ".txt");
-// 	fout << "Class" << '\t' << "global_pos" << '\t';
-// 	fout << "local_pos" << '\n';
-// 	for (int i = 0; actors.size(); i++)
-// 	{
-// 		fout << "Actor" << '\t' << actors[i]->position() << '\t';
-// 		fout << actors[i]->loc_position() << '\t';
-// 		fout << actors[i]->health() << '\t' << actors[i]->faith() << '\t';
-// 		fout << actors[i]->get_power() << '\n';
-// 	} 
+	auto& actors = WorldModel::getWorldInstance()->actors;
+	auto& landscape = WorldModel::getWorldInstance()->landscape;
+	std::ofstream fout(filename + ".txt");
+	for (int i = 0; actors.size(); i++)
+	{
+		//actors[i]->save_me(fout);
+	}
+	for (int i = 0; landscape.size(); i++)
+	{
+		//landscape[i]->save_me(fout);
+	}
+	fout.close();
 }
 
 WorldModel* WorldModel::getWorldInstance()

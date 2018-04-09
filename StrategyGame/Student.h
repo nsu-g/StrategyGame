@@ -14,9 +14,4 @@ public:
 	//TODO: virtual void update(Order&) override;
 	//TODO: virtual void update(MoveOrder&) override;
 
-	virtual sf::Vector2u& position() override
-
-	{
-		return pos;
-	}
 };

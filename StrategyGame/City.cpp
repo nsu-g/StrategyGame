@@ -1,4 +1,5 @@
 #include "City.h"
+#include <fstream>
 class City;
 
 void City::render(sf::RenderTarget& r)
@@ -23,20 +24,21 @@ void City::update()
 
 std::vector<int> City::dwellers()
 {
-	if (pick) return this->dw;
+	return this->dw;
 }
 
 float City::faith()
 {
-	if (pick) return this->relig;
+	return this->relig;
 }
 
 std::vector<float> City::kill()
 {
-	if (pick) return this->murd;
+	return this->murd;
 }
 
-void City::pick_up()
+void City::save(std::ofstream fout)
 {
-	// Kolya knows, how check it
+	std::string name = "City";
+	//save_me(fout, name);
 }
