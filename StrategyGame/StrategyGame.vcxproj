@@ -146,6 +146,7 @@
     <ClInclude Include="MoveOrder.h" />
     <ClInclude Include="Order.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="UI.h" />
     <ClInclude Include="WorldController.h" />
     <ClInclude Include="WorldModel.h" />
     <ClInclude Include="WorldRenderer.h" />

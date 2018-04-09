@@ -3,6 +3,7 @@
 #include <iostream>
 #include "WorldRenderer.h"
 #include "Finite-State Machine.h"
+#include "UI.h"
 
 int main()
 {
@@ -40,6 +41,8 @@ int main()
 		
 		The_Machine.render();
 		
+		UI ui(&window);
+		ui.render();
 		sf::sleep(sf::milliseconds(20));
 		
 		window.display();
