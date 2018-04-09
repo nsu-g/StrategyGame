@@ -15,12 +15,6 @@ public:
 
 	virtual void update() override;
 
-	virtual sf::Vector2u& position() override
-
-	{
-		return pos;
-	}
-	
 	std::vector<int> dwellers();
 	
 	float faith();
