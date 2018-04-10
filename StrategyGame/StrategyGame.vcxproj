@@ -129,8 +129,10 @@
     <ClCompile Include="City.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="Finite-State Machine.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Civilian.cpp" />
+    <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="WorldController.cpp" />
     <ClCompile Include="WorldModel.cpp" />
@@ -145,6 +147,7 @@
     <ClInclude Include="Actors.h" />
     <ClInclude Include="MoveOrder.h" />
     <ClInclude Include="Order.h" />
+    <ClInclude Include="Soldier.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="UI.h" />
     <ClInclude Include="WorldController.h" />

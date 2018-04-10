@@ -11,6 +11,8 @@
     <ClCompile Include="WorldController.cpp" />
     <ClCompile Include="WorldModel.cpp" />
     <ClCompile Include="WorldRenderer.cpp" />
+    <ClCompile Include="Soldier.cpp" />
+    <ClCompile Include="GameObject.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="City.h" />
@@ -26,5 +28,6 @@
     <ClInclude Include="WorldModel.h" />
     <ClInclude Include="WorldRenderer.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="Soldier.h" />
   </ItemGroup>
 </Project>
