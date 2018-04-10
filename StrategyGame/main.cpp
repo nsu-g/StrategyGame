@@ -40,9 +40,7 @@ int main()
 		window.clear();
 		
 		The_Machine.render();
-		
-		UI ui(&window);
-		ui.render();
+
 		sf::sleep(sf::milliseconds(20));
 		
 		window.display();
