@@ -31,8 +31,4 @@ public:
 	virtual void check_max_min();
 
 	virtual bool friendly();
-
-
-
-	std::map<std::shared_ptr<Actors>, bool> Actors::DefState(std::vector<std::shared_ptr<Actors>> Acts);
 };

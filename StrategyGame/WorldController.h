@@ -65,4 +65,6 @@ public:
 	void update();
 
 	void eat(Actors& player);
+
+	std::map<std::shared_ptr<Actors>, bool> DefState(std::vector<std::shared_ptr<Actors>> Acts);
 };

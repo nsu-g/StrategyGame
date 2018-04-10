@@ -131,7 +131,7 @@ void WorldController::update()
 {
 	
 	auto& ord = WorldModel::getWorldInstance()->orders;
-	auto glob_Vis = std::map<std::shared_ptr<Actors>, bool>();
+	auto& glob_Vis = std::map<std::shared_ptr<Actors>, bool>();
 	auto& obj = WorldModel::getWorldInstance()->actors;
 
 	for (int k = 0; k < obj.size(); k++)
@@ -185,4 +185,12 @@ void WorldController::eat(Actors& player)
 
 	}
 	player.check_max_min();
+}
+
+std::map<std::shared_ptr<Actors>, bool> WorldController::DefState(std::vector<std::shared_ptr<Actors>> Acts)
+{
+	auto& Act = WorldModel::getWorldInstance()->actors;
+	auto& glob_Def = std::map<std::shared_ptr<Actors>, bool>();
+
+	return;
 }

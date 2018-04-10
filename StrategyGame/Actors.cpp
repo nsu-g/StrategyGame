@@ -47,15 +47,9 @@ bool Actors::friendly()
 	return true;
 }
 
-std::map<std::shared_ptr<Actors>, bool> Actors::DefState(std::vector<std::shared_ptr<Actors>> Acts)
-{
-	
-}
-
 void Actors::update()
 {
-	auto& Acts = WorldModel::getWorldInstance()->actors;
-	auto& Def = DefState(Acts);
+
 }
 
 void Actors::update(std::shared_ptr<Order> &ord)
