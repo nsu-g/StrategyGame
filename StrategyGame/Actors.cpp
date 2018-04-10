@@ -23,25 +23,28 @@ void Actors::add_faith(int add)
 	this->relig = this->relig + add;
 }
 
-int& Actors::health()
+int Actors::health()
 {
 	return this->hp;
 }
 
-int& Actors::faith()
+int Actors::faith()
 {
 	return this->relig;
 }
 
-void Actors::check_max()
+void Actors::check_max_min()
 {
+	if (this->hp < 0) this->hp = 0;
 	if (this->hp > 100) this->hp = 100;
+	if (this->relig < 0) this->relig = 0;
 	if (this->relig > 100) this->relig = 100;
 }
 
-int& Actors::get_power()
+bool Actors::friendly()
 {
-	return this->power;
+	if (this->relig > 50) return false;
+	return true;
 }
 
 std::map<std::shared_ptr<Actors>, bool> Actors::DefState(std::vector<std::shared_ptr<Actors>> Acts)

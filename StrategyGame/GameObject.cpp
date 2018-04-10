@@ -45,7 +45,13 @@ void GameObject::set_active(bool new_active)
 	this->active = new_active;
 }
 
-void GameObject::save_me(std::ofstream fout, std::string type_object)
+void GameObject::save(std::ofstream & fout)
+{
+	std::string name = "GameObject";
+	this->save_me(fout, name);
+}
+
+void GameObject::save_me(std::ofstream& fout, std::string type_object)
 {
 	fout << type_object << '\t';
 	fout << this->position().x + ' ' + this->position().y << '\t';

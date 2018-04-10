@@ -20,6 +20,7 @@ class WorldRenderer
 	float radius = 20;
 
 	sf::Vector2u Chosen_Hex;
+
 	bool A_Hex_Is_Active = 0;
 	void renderHex(float ox, float oy, sf::RenderTarget& renderer)
 	{
@@ -100,5 +101,4 @@ public:
 	void render_The_ChosenHex(sf::RenderTarget& renderer);
 	bool Is_A_Hex_Active(); //This method would be usefull in the Machine.
 	sf::Vector2u Get_The_Chosen_Hex(); //This method would be usefull in the Machine.
-
 };

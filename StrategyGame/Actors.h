@@ -12,7 +12,6 @@ class Actors : public GameObject {
 protected:
 	int hp;
 	int relig;
-	int power;
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
@@ -25,13 +24,15 @@ public:
 
 	virtual void add_faith(int add);
 
-	virtual int& health();
+	virtual int health();
 	
-	virtual int& faith();
+	virtual int faith();
 	
-	virtual void check_max();
+	virtual void check_max_min();
 
-	virtual int& get_power();
+	virtual bool friendly();
+
+
 
 	std::map<std::shared_ptr<Actors>, bool> Actors::DefState(std::vector<std::shared_ptr<Actors>> Acts);
 };
