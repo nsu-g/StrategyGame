@@ -51,3 +51,11 @@ bool Actors::friendly()
 	return true;
 }
 
+void Actors::save_me(std::ofstream & fout, std::string type_object)
+{
+	fout << type_object << '\t';
+	fout << this->position().x + ' ' + this->position().y << '\t';
+	fout << this->loc_position().x + ' ' + this->loc_position().y << '\t';
+	fout << this->relig << '\t' << this->hp <<'\t';
+
+}

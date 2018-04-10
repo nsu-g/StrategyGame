@@ -34,3 +34,9 @@ void Civilian::update()
 {
 
 }
+
+void Civilian::save(std::ofstream & fout)
+{
+	std::string name = "Civilian";
+	this->save_me(fout, name);
+}

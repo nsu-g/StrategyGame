@@ -28,4 +28,6 @@ public:
 
 	virtual bool friendly();
 
+	virtual void save_me(std::ofstream& fout, std::string type_object) override;
+
 };
