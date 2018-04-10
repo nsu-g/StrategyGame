@@ -14,6 +14,15 @@ void Civilian::render(sf::RenderTarget& r)
 	this->get_sprite().setScale(sf::Vector2f(0.3, 0.3));
 	this->get_sprite().setOrigin(46, 149); //X-coordinate of the sprite is set to the centre of the picture, Y-coordinat - to its bottom.
 
+	if (this->active == true)
+	{
+		this->get_sprite().setColor(sf::Color(200, 255, 200, 255)); //If this Civilian is "active" than we should highlight him somehow.
+	}
+	else
+	{
+		this->get_sprite().setColor(sf::Color(255, 255, 255, 255)); //If he is not "active" we should return him his original color.
+	}
+
 	WorldController* wc = WorldController::Get_The_Controller_Instance();
 
 	this->get_sprite().setPosition(wc->mapToScreen(pos));

@@ -11,8 +11,10 @@
     <ClCompile Include="WorldController.cpp" />
     <ClCompile Include="WorldModel.cpp" />
     <ClCompile Include="WorldRenderer.cpp" />
+    <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Inqisitor.cpp" />
+    <ClCompile Include="Tree.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +31,9 @@
     <ClInclude Include="WorldModel.h" />
     <ClInclude Include="WorldRenderer.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="Soldier.h" />
     <ClInclude Include="Inqisitor.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="UserInterface.h" />
   </ItemGroup>
 </Project>

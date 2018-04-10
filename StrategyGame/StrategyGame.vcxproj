@@ -133,7 +133,9 @@
     <ClCompile Include="Inqisitor.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Civilian.cpp" />
+    <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Tree.cpp" />
     <ClCompile Include="UI.cpp" />
     <ClCompile Include="WorldController.cpp" />
     <ClCompile Include="WorldModel.cpp" />
@@ -149,8 +151,11 @@
     <ClInclude Include="Inqisitor.h" />
     <ClInclude Include="MoveOrder.h" />
     <ClInclude Include="Order.h" />
+    <ClInclude Include="Soldier.h" />
     <ClInclude Include="Student.h" />
+    <ClInclude Include="Tree.h" />
     <ClInclude Include="UI.h" />
+    <ClInclude Include="UserInterface.h" />
     <ClInclude Include="WorldController.h" />
     <ClInclude Include="WorldModel.h" />
     <ClInclude Include="WorldRenderer.h" />

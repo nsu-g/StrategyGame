@@ -28,7 +28,7 @@ sf::Vector2f WorldController::mapToScreen(sf::Vector2u point)
 		return{ offset_x + point.x*(2 * hex_radius * cos(30 * pi / 180.f) - 1), offset_y + point.y*y_offset_of_line};
 	}
 	else {
-		return{ offset_x - x_offset_of_line / 2 + point.x*(2 * hex_radius * cos(30 * pi / 180.f) - 1),
+		return{ offset_x - x_offset_of_line*(point.x % 2) + point.x*(2 * hex_radius * cos(30 * pi / 180.f) - 1),
 			offset_y + point.y*y_offset_of_line };
 	}
 }
