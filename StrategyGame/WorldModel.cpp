@@ -18,11 +18,11 @@ void WorldModel::SaveLevel(std::string filename)
 	std::ofstream fout(filename + ".txt");
 	for (int i = 0; actors.size(); i++)
 	{
-		//actors[i]->save_me(fout);
+		actors[i]->save(fout);
 	}
 	for (int i = 0; landscape.size(); i++)
 	{
-		//landscape[i]->save_me(fout);
+		landscape[i]->save(fout);
 	}
 	fout.close();
 }
