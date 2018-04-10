@@ -21,11 +21,12 @@ public:
 
 	virtual void add_faith(int add);
 
-	virtual int& health();
+	virtual int health();
 	
-	virtual int& faith();
+	virtual int faith();
 	
-	virtual void check_max();
+	virtual void check_max_min();
 
-	virtual int& get_power();
+	virtual bool friendly();
+
 };
