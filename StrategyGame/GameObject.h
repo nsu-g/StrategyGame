@@ -28,5 +28,7 @@ public:
 
 	virtual void set_active(bool new_active);
 
-	virtual void save_me(std::ofstream fout, std::string type_object);
+	virtual void save(std::ofstream& fout);
+	
+	virtual void save_me(std::ofstream& fout, std::string type_object);
 };
