@@ -42,7 +42,7 @@ void Finite_State_Machine::click(sf::Vector2i Position)
 	switch (Current_State)
 	{
 	case Global_Screen:
-		The_Renderer->Find_The_Chosen_Hex(Position.x,Position.y); //Let's search the hexagon where we clicked.
+		The_Renderer->Find_The_Chosen_Hex(Position.x, Position.y); //Let's search the hexagon where we clicked.
 
 		if (The_Renderer->Is_A_Hex_Active() == true) //If we've really clcked a hexagon. do the following:
 		{
@@ -50,6 +50,7 @@ void Finite_State_Machine::click(sf::Vector2i Position)
 			{
 				if (The_Model->landscape[i]->position() == The_Renderer->Get_The_Chosen_Hex())
 				{
+					The_Model->landscape[i]->set_active(true); //The chosen landscape becomes active;
 					Current_State = Global_Screen_Town_Selected;
 					return; //If the chosen hexagon's position coincides with the position of any "landscape", change the Current_State to "a town selected".
 				}
@@ -58,16 +59,22 @@ void Finite_State_Machine::click(sf::Vector2i Position)
 			{
 				if (The_Model->actors[i]->loc_position() == The_Renderer->Get_The_Chosen_Hex())
 				{
+					The_Model->actors[i]->set_active(true); //The chosen actor becomes active;
 					Current_State = Global_Screen_Unit_Selected;
 					return; //If the chosen hexagon's position coincides with the position of any "actor", change the Current_State to "a unit selected".
 				}
 			}
 		}
-		
+
 		break;
 
 	case Global_Screen_Unit_Selected:
 		The_Renderer->Find_The_Chosen_Hex(Position.x, Position.y); //Let's search the hexagon where we clicked.
+
+		for (int i = 0; i < The_Model->actors.size(); i++) //Go through all "actors".
+		{
+			The_Model->actors[i]->set_active(false); //"Deactivate" all actors (I don't know how to "deactivate" the only needed actor).
+		} //In order not to create this cycle twice let's execute it by default.
 
 		if (The_Renderer->Is_A_Hex_Active() == false)
 		{
@@ -80,16 +87,31 @@ void Finite_State_Machine::click(sf::Vector2i Position)
 			{
 				if (The_Model->landscape[i]->position() == The_Renderer->Get_The_Chosen_Hex())
 				{
+					The_Model->landscape[i]->set_active(true);
 					Current_State = Global_Screen_Town_Selected;
 					return; //If the chosen hexagon's position coincides with the position of any "landscape", change the Current_State to "a town selected".
 				}
 			}
-			Current_State = Global_Screen; //If there is no 'landscape" in the hexagon where we clocked, return to the "global screen" state.
+			for (int i = 0; i < The_Model->actors.size(); i++) //Go through all "actors".
+			{
+				if (The_Model->actors[i]->loc_position() == The_Renderer->Get_The_Chosen_Hex())
+				{
+					The_Model->actors[i]->set_active(true); //The chosen actor becomes active;
+					Current_State = Global_Screen_Unit_Selected;
+					return; //If the chosen hexagon's position coincides with the position of any "actor", change the Current_State to "a unit selected".
+				}
+			}
+			Current_State = Global_Screen; //If there is no 'landscape" and no "actor" in the hexagon where we clocked, return to the "global screen" state.
 		}
 		break;
 
 	case Global_Screen_Town_Selected:
 		The_Renderer->Find_The_Chosen_Hex(Position.x, Position.y);
+
+		for (int i = 0; i < The_Model->landscape.size(); i++) //Go through all "landscapes".
+		{
+			The_Model->landscape[i]->set_active(false); //"Deactivate" all landscapes (I don't know how to "deactivate" the only needed landscape).
+		} //In order not to create this cycle twice let's execute it by default.
 
 		if (The_Renderer->Is_A_Hex_Active() == false)
 		{
@@ -98,15 +120,25 @@ void Finite_State_Machine::click(sf::Vector2i Position)
 		} //If we clicked anywhere out of the hexagon field we return to the "global screen" state.
 		else //If we've really clcked a hexagon. do the following:
 		{
+			for (int i = 0; i < The_Model->landscape.size(); i++) //Go through all "landscapes".
+			{
+				if (The_Model->landscape[i]->position() == The_Renderer->Get_The_Chosen_Hex())
+				{
+					The_Model->landscape[i]->set_active(true);
+					Current_State = Global_Screen_Town_Selected;
+					return; //If the chosen hexagon's position coincides with the position of any "landscape", change the Current_State to "a town selected".
+				}
+			}
 			for (int i = 0; i < The_Model->actors.size(); i++) //Go through all "actors".
 			{
 				if (The_Model->actors[i]->loc_position() == The_Renderer->Get_The_Chosen_Hex())
 				{
+					The_Model->actors[i]->set_active(true); //The chosen actor becomes active;
 					Current_State = Global_Screen_Unit_Selected;
 					return; //If the chosen hexagon's position coincides with the position of any "actor", change the Current_State to "a unit selected".
 				}
 			}
-			Current_State = Global_Screen; //If there is no 'actors" in the hexagon where we clocked, return to the "global screen" state.
+			Current_State = Global_Screen; //If there is no 'actors" and no "landscape" in the hexagon where we clocked, return to the "global screen" state.
 		}
 		break;
 	}

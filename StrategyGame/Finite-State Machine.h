@@ -18,7 +18,8 @@ private:
 	{
 		Global_Screen,
 		Global_Screen_Unit_Selected,
-		Global_Screen_Town_Selected
+		Global_Screen_Town_Selected,
+		Process_In_Progress
 	};
 
 	States Current_State = Global_Screen;
@@ -33,12 +34,18 @@ public:
 
 	Finite_State_Machine(sf::RenderTarget& The_Target) : The_Target(The_Target)
 	{
-		auto New_Civilian = std::make_shared<Civilian>(); //Let's create a new Actor in order to check our code.
-		New_Civilian->position() = sf::Vector2u(2,2);
-		The_Model->actors.push_back(New_Civilian);
+		std::vector<std::shared_ptr<Civilian>> New_Civilians;
+		New_Civilians.resize(8);
 
+		for (int i = 0; i < New_Civilians.size(); i++)
+		{
+			New_Civilians[i] = std::make_shared<Civilian>();
+			New_Civilians[i]->position() = sf::Vector2u(1 + i, 1 + i);
+			The_Model->actors.push_back(New_Civilians[i]);
+		} //Let's create several Civilians on the map to check our code.
+		
 		auto New_City = std::make_shared<City>(); //Let's create a new City in order to check our code.
-		New_City->position() = sf::Vector2u(4, 4);
+		New_City->position() = sf::Vector2u(1, 7);
 		The_Model->landscape.push_back(New_City);
 	}
 
