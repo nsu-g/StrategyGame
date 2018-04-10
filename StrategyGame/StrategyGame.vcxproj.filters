@@ -1,86 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="Actors.cpp" />
+    <ClCompile Include="City.cpp" />
+    <ClCompile Include="Food.cpp" />
+    <ClCompile Include="Finite-State Machine.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="Inqisitor.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Civilian.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="Tree.cpp" />
+    <ClCompile Include="WorldController.cpp" />
+    <ClCompile Include="WorldModel.cpp" />
+    <ClCompile Include="WorldRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WorldModel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Student.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WorldController.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Civilian.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Actors.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-
-    <ClCompile Include="City.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Food.cpp">
-
-    <ClCompile Include="Finite-State Machine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WorldRenderer.cpp">
-
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="WorldModel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Order.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Student.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldRenderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldController.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MoveOrder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Civilian.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Actors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="City.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Food.h">
-    <ClInclude Include="Finite-State Machine.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="City.h" />
+    <ClInclude Include="Food.h" />
+    <ClInclude Include="Finite-State Machine.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Civilian.h" />
+    <ClInclude Include="Actors.h" />
+    <ClInclude Include="Inqisitor.h" />
+    <ClInclude Include="MoveOrder.h" />
+    <ClInclude Include="Order.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="Tree.h" />
+    <ClInclude Include="WorldController.h" />
+    <ClInclude Include="WorldModel.h" />
+    <ClInclude Include="WorldRenderer.h" />
+    <ClInclude Include="AttackOrder.h" />
   </ItemGroup>
 </Project>

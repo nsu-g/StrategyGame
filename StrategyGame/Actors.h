@@ -32,4 +32,6 @@ public:
 	virtual void check_max();
 
 	virtual int& get_power();
+
+	std::map<std::shared_ptr<Actors>, bool> Actors::DefState(std::vector<std::shared_ptr<Actors>> Acts);
 };

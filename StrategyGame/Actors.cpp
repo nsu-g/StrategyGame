@@ -13,16 +13,6 @@ void Actors::render(sf::RenderTarget& r)
 {
 }
 
-void Actors::update()
-{
-
-}
-
-void Actors::update(std::shared_ptr<Order> &ord)
-{
-
-}
-
 void Actors::add_hp(int add)
 {
 	this->hp = this->hp + add;
@@ -54,3 +44,18 @@ int& Actors::get_power()
 	return this->power;
 }
 
+std::map<std::shared_ptr<Actors>, bool> Actors::DefState(std::vector<std::shared_ptr<Actors>> Acts)
+{
+	
+}
+
+void Actors::update()
+{
+	auto& Acts = WorldModel::getWorldInstance()->actors;
+	auto& Def = DefState(Acts);
+}
+
+void Actors::update(std::shared_ptr<Order> &ord)
+{
+
+}
