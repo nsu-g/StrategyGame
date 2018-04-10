@@ -35,9 +35,7 @@ sf::Vector2f WorldController::mapToScreen(sf::Vector2u point)
 
 bool WorldController::move(GameObject& go, sf::Vector2i direction)
 {
-	
-	go.position().x = go.position().x + direction.x;
-	go.position().y = go.position().y + direction.y;
+
 
 	if (go.position().x == 0 && direction.x<0)
 	{
@@ -48,6 +46,9 @@ bool WorldController::move(GameObject& go, sf::Vector2i direction)
 		return false;
 	}
 
+	go.position().x = go.position().x + direction.x;
+	go.position().y = go.position().y + direction.y;
+	
 	// TODO: check for direction length, other objects from WorldModel don't lie in that coord
 	// return true if success
 	
@@ -159,5 +160,5 @@ void WorldController::eat(Actors& player)
 		}
 
 	}
-	player.check_max();
+	player.check_max_min();
 }
