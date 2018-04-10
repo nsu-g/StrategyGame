@@ -43,8 +43,4 @@ void Actors::check_max()
 	if (this->relig > 100) this->relig = 100;
 }
 
-int& Actors::get_power()
-{
-	return this->power;
-}
 

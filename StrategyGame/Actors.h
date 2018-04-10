@@ -10,7 +10,6 @@ class Actors : public GameObject {
 protected:
 	int hp;
 	int relig;
-	int power;
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
@@ -27,5 +26,5 @@ public:
 	
 	virtual void check_max();
 
-	virtual int& get_power();
+
 };
