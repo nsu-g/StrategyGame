@@ -9,7 +9,7 @@ class City : public GameObject {
 	
 	std::vector<int> dw;
 	float relig; // вера в процентах
-	std::vector<float> murd; // (для инквизитора, для еретиков) или наоборот
+	std::vector<float> murder; // (для инквизитора, для еретиков) или наоборот
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
@@ -22,5 +22,5 @@ public:
 
 	std::vector<float> kill();
 
-	void save(std::ofstream fout);
+	virtual void save(std::ofstream& fout) override;
 };

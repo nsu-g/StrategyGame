@@ -34,11 +34,14 @@ float City::faith()
 
 std::vector<float> City::kill()
 {
-	return this->murd;
+	return this->murder;
 }
 
-void City::save(std::ofstream fout)
+void City::save(std::ofstream& fout)
 {
 	std::string name = "City";
-	//save_me(fout, name);
+	this->save_me(fout, name);
+	//fout << "dwellers:" << this->dwellers() << '\t';
+	//fout << "murder:" << this->kill() << '\t';
+	//fout << "faith:" << this->faith() << '\t';
 }
