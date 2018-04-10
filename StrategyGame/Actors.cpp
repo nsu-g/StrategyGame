@@ -4,6 +4,7 @@
 #include "MoveOrder.h"
 #include "WorldRenderer.h"
 #include "GameObject.h"
+#include "Order.h"
 
 class City;
 class WorldController;
@@ -13,6 +14,11 @@ void Actors::render(sf::RenderTarget& r)
 }
 
 void Actors::update()
+{
+
+}
+
+void Actors::update(std::shared_ptr<Order> &ord)
 {
 
 }

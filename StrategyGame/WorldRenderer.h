@@ -3,6 +3,9 @@
 #include <SFML/Graphics.hpp>
 #include <cmath>
 #include "WorldModel.h"
+#include "GameObject.h"
+#include <vector>
+
 class WorldRenderer
 {
 	static WorldRenderer* RENDERER;
@@ -61,6 +64,32 @@ class WorldRenderer
 				renderHex(30 - (i % 2)*x_offset + j* (2 * radius*cos(30 * pi / 180.f) - 1), 30 + i*y_offset, renderer);
 			}
 		}
+	}
+
+	void DrawDeWay(sf::Vector2u first, std::vector<sf::Vector2i> steps, sf::RenderTarget& renderer)
+	{
+		sf::Vector2u start = first;
+		sf::CircleShape hexagon(radius, 6);
+		hexagon.setOrigin(radius, radius);
+		hexagon.setPosition(start.x, start.y);
+		hexagon.setOutlineThickness(1);
+		hexagon.setFillColor(sf::Color::Green);
+		hexagon.setOutlineColor(sf::Color::Transparent);
+		renderer.draw(hexagon);
+		
+			for (int i; i < sizeof(steps); i++)
+			{
+				start.x = start.x + steps[i].x;
+				start.y = start.y + steps[i].y;
+			
+				sf::CircleShape hexagon(radius, 6);
+				hexagon.setOrigin(radius, radius);
+				hexagon.setPosition(start.x, start.y);
+				hexagon.setOutlineThickness(1);
+				hexagon.setFillColor(sf::Color::Green);
+				hexagon.setOutlineColor(sf::Color::Transparent);
+				renderer.draw(hexagon);
+			}
 	}
 
 public:

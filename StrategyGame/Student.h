@@ -3,8 +3,10 @@
 #include "GameObject.h"
 #include "WorldController.h"
 #include <SFML\Graphics.hpp>
+#include "Actors.h"
 
-class Student : public GameObject {
+class Actors;
+class Student : public Actors {
 
 public:
 	virtual void render(sf::RenderTarget& r) override;
