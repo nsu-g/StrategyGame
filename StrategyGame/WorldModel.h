@@ -44,8 +44,11 @@ public:
 
 	//Render functions
 
-	void Render_Actors(sf::RenderTarget& The_Target);
-	void Render_Landscapes(sf::RenderTarget& The_Target);
+	void Render_Actors(sf::RenderTarget& The_Target); //Render all Actors in the "actors" vector.
+	void Render_Landscapes(sf::RenderTarget& The_Target); //Render all Landscapes in the "landscape" vector.
+
+	void Deactivate_Actors();
+	void Deactivate_Landscapes();
 
 };
 

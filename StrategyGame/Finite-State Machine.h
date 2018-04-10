@@ -19,10 +19,10 @@ private:
 	{
 		Global_Screen,
 		Global_Screen_Unit_Selected,
-		Global_Screen_Town_Selected,
+		Global_Screen_Landscape_Selected,
 		Process_In_Progress,
 		Global_Screen_Unit_Activated,
-		Global_Screen_Town_Activated
+		Global_Screen_Landscape_Activated
 	};
 
 	States Current_State = Global_Screen;
