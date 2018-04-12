@@ -20,4 +20,6 @@ public:
 	virtual void add_power(int add);
 
 	virtual void check_power();
+
+	virtual void save(std::ofstream& fout) override;
 };

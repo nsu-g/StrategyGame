@@ -15,3 +15,9 @@ int Food::health()
 {
 	return this->hp;
 }
+
+void Food::save(std::ofstream & fout)
+{
+	std::string name = "Food";
+	this->save_me(fout, name);
+}

@@ -5,6 +5,43 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StrategyGame", "StrategyGame\StrategyGame.vcxproj", "{18566709-C1E6-40EC-99CC-C88873317924}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BDE1C50C-A98C-45A6-A7D7-2FD476C2EB05}"
+	ProjectSection(SolutionItems) = preProject
+		StrategyGame\Actors.cpp = StrategyGame\Actors.cpp
+		StrategyGame\Actors.h = StrategyGame\Actors.h
+		StrategyGame\City.cpp = StrategyGame\City.cpp
+		StrategyGame\City.h = StrategyGame\City.h
+		StrategyGame\Civilian.cpp = StrategyGame\Civilian.cpp
+		StrategyGame\Civilian.h = StrategyGame\Civilian.h
+		StrategyGame\Finite-State Machine.cpp = StrategyGame\Finite-State Machine.cpp
+		StrategyGame\Finite-State Machine.h = StrategyGame\Finite-State Machine.h
+		StrategyGame\Food.cpp = StrategyGame\Food.cpp
+		StrategyGame\Food.h = StrategyGame\Food.h
+		StrategyGame\GameObject.cpp = StrategyGame\GameObject.cpp
+		StrategyGame\GameObject.h = StrategyGame\GameObject.h
+		StrategyGame\Inqisitor.cpp = StrategyGame\Inqisitor.cpp
+		StrategyGame\Inqisitor.h = StrategyGame\Inqisitor.h
+		StrategyGame\main.cpp = StrategyGame\main.cpp
+		StrategyGame\MoveOrder.h = StrategyGame\MoveOrder.h
+		StrategyGame\ObjectRenderer.h = StrategyGame\ObjectRenderer.h
+		StrategyGame\Order.h = StrategyGame\Order.h
+		StrategyGame\Soldier.cpp = StrategyGame\Soldier.cpp
+		StrategyGame\Soldier.h = StrategyGame\Soldier.h
+		StrategyGame\Student.cpp = StrategyGame\Student.cpp
+		StrategyGame\Student.h = StrategyGame\Student.h
+		StrategyGame\Tree.cpp = StrategyGame\Tree.cpp
+		StrategyGame\Tree.h = StrategyGame\Tree.h
+		StrategyGame\UI.cpp = StrategyGame\UI.cpp
+		StrategyGame\UI.h = StrategyGame\UI.h
+		StrategyGame\UserInterface.h = StrategyGame\UserInterface.h
+		StrategyGame\WorldController.cpp = StrategyGame\WorldController.cpp
+		StrategyGame\WorldController.h = StrategyGame\WorldController.h
+		StrategyGame\WorldModel.cpp = StrategyGame\WorldModel.cpp
+		StrategyGame\WorldModel.h = StrategyGame\WorldModel.h
+		StrategyGame\WorldRenderer.cpp = StrategyGame\WorldRenderer.cpp
+		StrategyGame\WorldRenderer.h = StrategyGame\WorldRenderer.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64

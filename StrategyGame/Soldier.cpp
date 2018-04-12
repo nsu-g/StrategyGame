@@ -32,3 +32,10 @@ void Soldier::check_power()
 	if (this->power > 100) this->power = 100;
 	if (this->power < 0) this->power = 0;
 }
+
+void Soldier::save(std::ofstream & fout)
+{
+	std::string name = "Soldier";
+	this->save_me(fout, name)'\t';
+	fout << this-> power << '\t';
+}

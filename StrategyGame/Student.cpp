@@ -25,3 +25,9 @@ void Student::update()
 {
 
 }
+
+void Student::save(std::ofstream & fout)
+{
+	std::string name = "Student";
+	this->save_me(fout, name);
+}

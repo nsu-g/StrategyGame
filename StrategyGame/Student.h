@@ -11,6 +11,8 @@ public:
 
 	virtual void update() override; 
 
+	virtual void save(std::ofstream& fout) override;
+
 	//TODO: virtual void update(Order&) override;
 	//TODO: virtual void update(MoveOrder&) override;
 

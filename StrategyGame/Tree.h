@@ -11,5 +11,7 @@ public:
 	virtual void render(sf::RenderTarget& r) override;
 
 	virtual void update() override;
+
+	virtual void save(std::ofstream& fout) override;
 	
 };

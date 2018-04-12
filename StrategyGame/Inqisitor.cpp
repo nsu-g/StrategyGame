@@ -15,3 +15,9 @@ void Inqisitor::update()
 {
 
 }
+
+void Inqisitor::save(std::ofstream & fout)
+{
+	std::string name = "Inqisitor";
+	this->save_me(fout, name);
+}
