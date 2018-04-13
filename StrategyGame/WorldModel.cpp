@@ -5,9 +5,9 @@ WorldModel* WorldModel::WORLD = nullptr;
 
 WorldModel::WorldModel()
 {
-	auto ps = std::make_shared<Actors>();
+	/*auto ps = std::make_shared<Actors>();
 	actors.push_back(ps);
-	orders.push_back(std::make_shared<MoveOrder>(ps, sf::Vector2u(5,1)));
+	orders.push_back(std::make_shared<MoveOrder>(ps, sf::Vector2u(5,1)));*/
 }
 
 
@@ -47,6 +47,22 @@ void WorldModel::Render_Landscapes(sf::RenderTarget & The_Target) //Render all e
 	for (int i = 0; i < landscape.size(); i++)
 	{
 		landscape[i]->render(The_Target);
+	}
+}
+
+void WorldModel::Deactivate_Actors()
+{
+	for (int i = 0; i < actors.size(); i++)
+	{
+		actors[i]->set_active(false);
+	}
+}
+
+void WorldModel::Deactivate_Landscapes()
+{
+	for (int i = 0; i < landscape.size(); i++)
+	{
+		landscape[i]->set_active(false);
 	}
 }
 

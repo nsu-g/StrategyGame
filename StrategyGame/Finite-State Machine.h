@@ -7,6 +7,7 @@
 #include "WorldController.h"
 #include "WorldModel.h"
 #include "WorldRenderer.h"
+#include "UI.h"
 
 //The Finite-State Machine (later - the Machine) is declared here.
 
@@ -18,8 +19,10 @@ private:
 	{
 		Global_Screen,
 		Global_Screen_Unit_Selected,
-		Global_Screen_Town_Selected,
-		Process_In_Progress
+		Global_Screen_Landscape_Selected,
+		Process_In_Progress,
+		Global_Screen_Unit_Activated,
+		Global_Screen_Landscape_Activated
 	};
 
 	States Current_State = Global_Screen;
@@ -29,6 +32,7 @@ private:
 	WorldModel* The_Model = WorldModel::getWorldInstance();
 
 	sf::RenderTarget& The_Target; //This will be a window in our program.
+	UI The_Interface = UI(The_Model);
 
 public:
 
@@ -41,6 +45,7 @@ public:
 		{
 			New_Civilians[i] = std::make_shared<Civilian>();
 			New_Civilians[i]->position() = sf::Vector2u(1 + i, 1 + i);
+			New_Civilians[i]->add_hp(30 +5*i);
 			The_Model->actors.push_back(New_Civilians[i]);
 		} //Let's create several Civilians on the map to check our code.
 		
