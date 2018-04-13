@@ -36,6 +36,6 @@ void Soldier::check_power()
 void Soldier::save(std::ofstream & fout)
 {
 	std::string name = "Soldier";
-	this->save_me(fout, name)'\t';
+	this->save_me(fout, name);
 	fout << this-> power << '\t';
 }
