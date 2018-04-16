@@ -11,6 +11,10 @@ protected:
 	sf::Sprite sprite;
 	sf::Texture texture;
 	bool active = false;
+	
+	//Let us introduce Images for our objects. We'll upload them in this class so as not to load them every time when we need them.
+	static sf::Image The_Civilian_Image;
+	static sf::Image The_City_Image;
 
 public:
 	virtual void render(sf::RenderTarget&) = 0;
@@ -31,4 +35,9 @@ public:
 	virtual void save(std::ofstream& fout);
 	
 	virtual void save_me(std::ofstream& fout, std::string type_object);
+
+	//Let us create a method which will load all Images from necessary files.
+	//This method will be called in the Machine's constructor.
+
+	static void Load_Images();
 };
