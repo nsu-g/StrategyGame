@@ -37,7 +37,10 @@ private:
 public:
 
 	Finite_State_Machine(sf::RenderTarget& The_Target) : The_Target(The_Target)
-	{
+	{		
+		//Let's load all Images;
+		GameObject::Load_Images();
+
 		std::vector<std::shared_ptr<Civilian>> New_Civilians;
 		New_Civilians.resize(8);
 
@@ -56,5 +59,4 @@ public:
 
 	void render();
 	void click(sf::Vector2i Position);
-	
 };
