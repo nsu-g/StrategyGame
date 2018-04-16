@@ -10,9 +10,15 @@ public:
 	UI(WorldModel* The_Model)
 	{
 		this->The_Model = The_Model;
-		update();
+		font.loadFromFile("Fonts/arial.ttf");
+		hpText.setFont(font);
+		hpText.setCharacterSize(15);
+		hpText.setPosition(305, 315);
 
-		//hp.setPoint(0, sf::Vector2f())
+		faithText.setFont(font);
+		faithText.setCharacterSize(15);
+		faithText.setPosition(305, 330);
+		update();
 	}
 
 	void update() {
@@ -63,8 +69,10 @@ public:
 		rectangle.setPoint(3, sf::Vector2f(5, 345));
 		rectangle.setFillColor(sf::Color(245, 210, 55));
 
-		hpText.setPosition(sf::Vector2f(0, 0));
+		std::cout << actor.health() << std::endl;
 		hpText.setString(std::to_string(actor.health()));
+		faithText.setString(std::to_string(actor.faith()));
+		
 	}
 
 	void render(sf::RenderTarget& target) {
@@ -79,6 +87,7 @@ public:
 private:
 	WorldModel* The_Model;
 	sf::ConvexShape hp;
+	sf::Font font;
 	sf::Text hpText;
 	sf::ConvexShape faith;
 	sf::Text faithText;
