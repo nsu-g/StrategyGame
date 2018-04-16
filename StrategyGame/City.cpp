@@ -4,7 +4,7 @@ class City;
 
 void City::render(sf::RenderTarget& r)
 {
-	this->get_texture().loadFromFile("Textures/City 66x69 Real_Size.png"); //This picture was supposed to be larger. But I have not drawn whole picture.
+	this->get_texture().loadFromImage(The_City_Image);
 	this->get_texture().setSmooth(false);
 	this->get_sprite().setTexture(get_texture());
 	this->get_sprite().setScale(sf::Vector2f(1, 1));
